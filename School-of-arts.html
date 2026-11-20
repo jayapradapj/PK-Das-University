@@ -391,6 +391,7 @@
         .program-card-thumb-wrap {
             position: relative;
             height: 350px;
+            object-fit: cover;
             overflow: hidden;
             background: var(--pk-primary);
         }
@@ -398,6 +399,7 @@
         .program-card-img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
@@ -695,7 +697,7 @@
         }
 
         .faculty-thumb-wrap {
-            height: 230px;
+            height: 300px;
             position: relative;
             background: #eef2f8;
             overflow: hidden;
@@ -2732,6 +2734,11 @@ img, video, iframe {
         font-size: 1.45rem;
     }
 }
+      .program-metric-value:hover{
+            transform: scale(1.05);
+            color: var(--nav-secondary);
+        }
+
     </style>
 </head>
 
@@ -2955,18 +2962,12 @@ img, video, iframe {
                     <h1 class="dept-hero-title">
                         School of <span>Social Sciences</span>
                     </h1>
-                    <p class="dept-hero-subtitle">
-                        Celebrating India's rich cultural heritage, classical performing arts, and philosophical wisdom through immersive studio apprenticeship, academic scholarship, and interdisciplinary cultural research.
-                    </p>
                     <div class="d-flex gap-3 flex-wrap">
                         <a href="https://applynow.pkdasuniversity.net" target="_blank" rel="noopener noreferrer" class="btn btn-primary-contemporary px-4 py-2">
                             Apply for Admissions <i class="fas fa-arrow-right ms-1"></i>
                         </a>
                         <a href="#programs" class="btn btn-outline-light px-4 py-2" style="border-radius: 6px; font-weight: 600;">
                             Explore Programmes <i class="fas fa-theater-masks ms-1"></i>
-                        </a>
-                        <a href="#infrastructure" class="btn btn-outline-light px-4 py-2" style="border-radius: 6px; font-weight: 600;">
-                            Cultural Studios &amp; Archives <i class="fas fa-landmark ms-1"></i>
                         </a>
                     </div>
                 </div>
@@ -2981,10 +2982,10 @@ img, video, iframe {
                 <div class="col-lg-6 reveal-on-scroll">
                     <span class="section-tag">Humanities &amp; Indian Knowledge Systems</span>
                     <h2 class="section-title">About School of <span>Social Sciences</span></h2>
-                    <p class="text-muted mb-3">
+                    <p class="text-muted mb-3" style="text-align: justify;">
                         The School of Social Sciences at PKDAS Deemed to be University stands as a sanctuary of classical scholarship and creative artistic inquiry. Dedicated to bridging India's ancient civilizational heritage with contemporary critical thinking, our programmes in Performing Arts and Indology are designed to preserve, investigate, and innovate.
                     </p>
-                    <p class="text-muted mb-4">
+                    <p class="text-muted mb-4" style="text-align: justify;">
                         Students learn through direct Guru-Shishya parampara apprenticeship in acoustically engineered dance halls, audio recording studios, and manuscript preservation archives. Our curriculum adheres strictly to UGC National Education Policy (NEP 2020) frameworks, fostering multidisciplinary dialogue between the arts, humanities, cognitive sciences, and cultural diplomacy.
                     </p>
                     <div class="row g-3">
@@ -3011,9 +3012,9 @@ img, video, iframe {
 
                 <div class="col-lg-6 reveal-on-scroll">
                     <div class="about-img position-relative dept-image-wrapper">
-                        <img src="img/nasc.jpg"
+                        <img src="https://i.pinimg.com/736x/3f/7f/07/3f7f07389d64bb0642f22e162020285e.jpg"
                             alt="School of Social Sciences &amp; Performing Arts Campus"
-                            class="img-fluid rounded-3 shadow-lg w-100" style="height: 360px; object-fit: cover;">
+                            class="img-fluid rounded-3 shadow-lg w-100" style="height: 400px; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -3050,7 +3051,7 @@ img, video, iframe {
                     <div class="col-lg-6">
                         <div class="program-feature-card">
                             <div class="program-card-thumb-wrap">
-                                <img src="img/1dance.png" alt="BA in Performing Arts (Hons)" class="program-card-img" loading="lazy">
+                                <img src="https://i.pinimg.com/1200x/79/cf/03/79cf03957738f293de2f7d5d0c1d2af3.jpg" alt="BA in Performing Arts (Hons)" class="program-card-img" loading="lazy">
                                 <div class="program-card-overlay"></div>
                             </div>
 
@@ -3089,7 +3090,7 @@ img, video, iframe {
                     <div class="col-lg-6">
                         <div class="program-feature-card">
                             <div class="program-card-thumb-wrap">
-                                <img src="img/4yoga.png" alt="B.Sc. in Indology (Hons)" class="program-card-img" loading="lazy">
+                                <img src="https://i.pinimg.com/1200x/a7/c1/c1/a7c1c16e174109436a2941212f6c9145.jpg" alt="B.Sc. in Indology (Hons)" class="program-card-img" loading="lazy">
                                 <div class="program-card-overlay"></div>    
                             </div>
 
@@ -3373,7 +3374,7 @@ img, video, iframe {
                         <div class="faculty-thumb-wrap">
                             <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg"
                                 alt="Vidwan Dr. T. V. Ramanathan" loading="lazy">
-                            <span class="faculty-desig-tag">Professor &amp; HoD</span>
+                            <span class="faculty-desig-tag">Professor</span>
                         </div>
                         <div class="faculty-details-body">
                             <h4 class="faculty-title-name">Dr. T. V. Ramanathan</h4>
@@ -3391,7 +3392,7 @@ img, video, iframe {
                         <div class="faculty-thumb-wrap">
                             <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg"
                                 alt="Dr. Hariprasad Acharya" loading="lazy">
-                            <span class="faculty-desig-tag">Professor &amp; HoD</span>
+                            <span class="faculty-desig-tag">Associate Professor</span>
                         </div>
                         <div class="faculty-details-body">
                             <h4 class="faculty-title-name">Dr. Hariprasad Acharya</h4>
@@ -3409,7 +3410,7 @@ img, video, iframe {
                         <div class="faculty-thumb-wrap">
                             <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg"
                                 alt="Dr. Radhika Krishnan" loading="lazy">
-                            <span class="faculty-desig-tag">Associate Professor</span>
+                            <span class="faculty-desig-tag">Assistant Professor</span>
                         </div>
                         <div class="faculty-details-body">
                             <h4 class="faculty-title-name">Dr. Radhika Krishnan</h4>
@@ -3423,6 +3424,10 @@ img, video, iframe {
                 </div>
             </div>
         </div>
+                    <div class="col-12 mt-5 text-center reveal-on-scroll">
+                <a class="btn-apply-header rounded-pill" href="#" target="_blank">View
+                    more</a>
+            </div>
     </section>
 
   <!--<section id="achievements" class="section-padding bg-tint-subtle">
@@ -3555,97 +3560,42 @@ img, video, iframe {
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-1">
                     <div class="facility-hover-card">
-                        <img src="img/2dance.png" alt="Classical Dance &amp; Natya Studio" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Dance Studio</span>
-                            <h3 class="facility-title">Classical Dance &amp; Natya Rehearsal Studio</h3>
-                            <p class="facility-desc">
-                                Teakwood sprung dance floor, full-length acoustic wall mirrors, integrated sound monitoring systems, and Natyashastra dramaturgy library.
-                            </p>
-                            <div class="facility-meta">
-                                <i class="fas fa-check-circle"></i> <span>Acoustic Sprung Wood &bull; 1500 sq.ft</span>
-                            </div>
-                        </div>
+                        <img src="img/uninfra5.png" alt="Classical Dance &amp; Natya Studio" loading="lazy">
+                    
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-2">
                     <div class="facility-hover-card">
-                        <img src="img/1music.png" alt="Audio Recording &amp; Music Acoustics Studio" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Acoustics Studio</span>
-                            <h3 class="facility-title">Audio Recording &amp; Music Acoustics Studio</h3>
-                            <p class="facility-desc">
-                                Multi-track digital audio workstation running Pro Tools &amp; Logic Pro, soundproof vocal isolation booths, and professional condenser microphones.
-                            </p>
-                            <div class="facility-meta">
-                                <i class="fas fa-microphone-alt"></i> <span>Pro Tools HD &bull; Soundproof Booths</span>
-                            </div>
-                        </div>
+                        <img src="img/uninfra6.png" alt="Audio Recording &amp; Music Acoustics Studio" loading="lazy">
+                        
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-3">
                     <div class="facility-hover-card">
-                        <img src="img/3dance.png" alt="Indology Palm-Leaf &amp; Epigraphy Archive" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Heritage Archive</span>
-                            <h3 class="facility-title">Indology Palm-Leaf &amp; Epigraphy Archive</h3>
-                            <p class="facility-desc">
-                                Climate-controlled manuscript preservation laboratory, high-resolution digitization overhead scanners, and stone inscription estampage collection.
-                            </p>
-                            <div class="facility-meta">
-                                <i class="fas fa-scroll"></i> <span>Preservation Lab &bull; Micro-Scanners</span>
-                            </div>
-                        </div>
+                        <img src="img/uninfra8.png" alt="Indology Palm-Leaf &amp; Epigraphy Archive" loading="lazy">
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-4">
                     <div class="facility-hover-card">
-                        <img src="img/4yoga.png" alt="Yogic Science &amp; Meditation Sanctuary" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Yoga Sanctuary</span>
-                            <h3 class="facility-title">Yogic Science &amp; Dhyana Meditation Sanctuary</h3>
-                            <p class="facility-desc">
-                                Serene natural-light sanctuary dedicated to daily classical Asana practice, Pranayama breathwork, mindfulness research, and Yogic philosophy.
-                            </p>
-                            <div class="facility-meta">
-                                <i class="fas fa-om"></i> <span>Natural Airflow &bull; Meditation Hall</span>
-                            </div>
-                        </div>
+                        <img src="img/uninfra3.png" alt="Yogic Science &amp; Meditation Sanctuary" loading="lazy">
+                        
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-5">
                     <div class="facility-hover-card">
-                        <img src="img/2music.png" alt="Classical Percussion &amp; Instrumental Lab" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Instrumental Lab</span>
-                            <h3 class="facility-title">Classical Percussion &amp; Instrumental Lab</h3>
-                            <p class="facility-desc">
-                                Dedicated training suite equipped with tuned Mridangams, Ghatams, Kanjiras, Saraswati Veenas, classical violins, and digital Tanpuras.
-                            </p>
-                            <div class="facility-meta">
-                                <i class="fas fa-drum"></i> <span>Tuned Acoustic Instruments</span>
-                            </div>
-                        </div>
+                        <img src="img/uninfra2.png" alt="Classical Percussion &amp; Instrumental Lab" loading="lazy">
+                    
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-6">
                     <div class="facility-hover-card">
                         <img src="img/uninfra7.png" alt="Social Sciences &amp; Humanities Library" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Humanities Library</span>
-                            <h3 class="facility-title">Social Sciences Library &amp; Cultural E-Portal</h3>
-                            <p class="facility-desc">
-                                Access to JSTOR, Project MUSE, over 22,000 volumes spanning Indian philosophy, classical literature, folklore archives, and silent research cubicles.
-                            </p>
-                            <div class="facility-meta">
-                                <i class="fas fa-book-open"></i> <span>22,000+ Volumes &bull; JSTOR Access</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

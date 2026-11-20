@@ -697,7 +697,7 @@
         }
 
         .faculty-thumb-wrap {
-            height: 230px;
+            height: 300px;
             position: relative;
             background: #eef2f8;
             overflow: hidden;
@@ -2735,6 +2735,21 @@ img, video, iframe {
         font-size: 1.45rem;
     }
 }
+
+.faculty-btn {
+    background-color: var(--nav-secondary);
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 10px;
+    display: block;
+    width: fit-content;
+    margin: 25px auto;
+}
+.faculty-btn:hover{
+    box-shadow: 0 0 0 10px #ff9d34;
+    transition: 0.3s ease-in-out;
+    background-color: var(--pk-secondary-dark);
+}
     </style>
 </head>
 
@@ -2954,6 +2969,14 @@ img, video, iframe {
                         School of Engineering <span>& Technology</span>
                     </h1>
                 </div>
+                <div class="d-flex gap-3 flex-wrap">
+                        <a href="https://applynow.pkdasuniversity.net" target="_blank" rel="noopener noreferrer" class="btn btn-primary-contemporary px-4 py-2">
+                            Apply for Admissions <i class="fas fa-arrow-right ms-1"></i>
+                        </a>
+                        <a href="#programs" class="btn btn-outline-light px-4 py-2" style="border-radius: 6px; font-weight: 600;">
+                            Explore Programmes <i class="fas fa-theater-masks ms-1"></i>
+                        </a>
+                    </div>
             </div>
         </div>
     </section>
@@ -2964,18 +2987,19 @@ img, video, iframe {
                 <div class="col-lg-6 reveal-on-scroll">
                     <span class="section-tag">Academic Department</span>
                     <h2 class="section-title">About School of Engineering <span>& Technology</span></h2>
-                    <p class="text-muted mb-4">
+                    <p class="text-muted mb-4"style="text-align: justify;">
                         The School of Engineering & Technology at PKDAS Deemed to be University integrates robust
                         scientific foundations with practical laboratory training. Our curriculum adheres strictly to
                         AICTE model guidelines, UGC statutory quality benchmarks, and the National Education Policy (NEP
                         2020) framework.
                     </p>
                 </div>
+                
                 <div class="col-lg-6 reveal-on-scroll">
                     <div class="about-img position-relative dept-image-wrapper">
                         <img src="img/Tech-about.jpg"
                             alt="School of Engineering Research & Innovation Lab"
-                            class="img-fluid rounded-3 shadow-lg w-100" style="height: 300px; object-fit: cover;">
+                            class="img-fluid rounded-3 shadow-lg w-100" style="height: 400px; object-fit: cover;">
                     </div>
                 </div>
             </div>
@@ -3310,7 +3334,7 @@ B.Tech Artificial Intelligence and Medical Imaging is an interdisciplinary engin
                         <div class="faculty-thumb-wrap">
                             <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg"
                                 alt="Dr. K. Meenakshi" loading="lazy">
-                            <span class="faculty-desig-tag">Professor &amp; HoD</span>
+                            <span class="faculty-desig-tag">Professor</span>
                         </div>
                         <div class="faculty-details-body">
                             <h4 class="faculty-title-name"></h4>
@@ -3359,7 +3383,12 @@ B.Tech Artificial Intelligence and Medical Imaging is an interdisciplinary engin
                     </div>
                 </div>
             </div>
+            
         </div>
+            <div class="col-12 mt-5 text-center reveal-on-scroll">
+                <a class="btn-apply-header rounded-pill" href="#" target="_blank">View
+                    more</a>
+            </div>
     </section>
 
    <!-- <section id="achievements" class="section-padding bg-tint-subtle">
@@ -3511,96 +3540,41 @@ B.Tech Artificial Intelligence and Medical Imaging is an interdisciplinary engin
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-1">
                     <div class="facility-hover-card">
                         <img src="img/uninfra1.png" alt="Drone Flight Testing Facility" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Aero & UAV Lab</span>
-                            <h3 class="facility-title">Drone Testing & Flight Simulation Arena</h3>
-                            <p class="facility-desc">Equipped with indoor netted flight cages, multi-rotor test benches,
-                                dynamic thrust stands, and ground telemetry stations for autonomous navigation trials.
-                            </p>
-                            <div class="facility-meta">
-                                <i class="fas fa-check-circle"></i> <span>DGCA-Compliant Flight Arena</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-2">
                     <div class="facility-hover-card">
                         <img src="img/uninfra2.png" alt="Avionics & Radar Systems Lab" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Avionics Lab</span>
-                            <h3 class="facility-title">Avionics, Radar & Navigation Lab</h3>
-                            <p class="facility-desc">Inertial measurement systems (IMU), GPS/GLONASS receivers, spectrum
-                                analyzers, ARINC-429 bus trainers, and digital flight instrumentation testbeds.</p>
-                            <div class="facility-meta">
-                                <i class="fas fa-satellite"></i> <span>SDR Transceivers &bull; Radar Simulators</span>
-                            </div>
-                        </div>
+                    
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-3">
                     <div class="facility-hover-card">
                         <img src="img/uninfra3.png" alt="AI Computing Cluster" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">AI & Vision Lab</span>
-                            <h3 class="facility-title">High Performance AI & GPU Computing Lab</h3>
-                            <p class="facility-desc">Multi-GPU compute clusters powered by NVIDIA architecture dedicated
-                                to deep neural network training, 3D medical image segmentation, and edge AI vision.</p>
-                            <div class="facility-meta">
-                                <i class="fas fa-microchip"></i> <span>NVIDIA CUDA Accelerated Clusters</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-4">
                     <div class="facility-hover-card">
                         <img src="img/uninfra4.png" alt="Wind Tunnel Facility" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Aerodynamics Lab</span>
-                            <h3 class="facility-title">Subsonic Aerodynamics & Wind Tunnel Lab</h3>
-                            <p class="facility-desc">Closed-circuit subsonic wind tunnel with multi-tube digital
-                                manometers, force balances, and smoke flow visualization for airfoil aerodynamic
-                                characterization.</p>
-                            <div class="facility-meta">
-                                <i class="fas fa-wind"></i> <span>Subsonic Tunnel &bull; Smoke Diagnostics</span>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-5">
                     <div class="facility-hover-card">
                         <img src="img/uninfra5.png" alt="CAD/CAM Centre" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Prototyping Centre</span>
-                            <h3 class="facility-title">CAD/CAM & Additive Manufacturing Centre</h3>
-                            <p class="facility-desc">High-precision SLA & FDM industrial 3D printers, CNC machining
-                                units, and engineering design workstations running SolidWorks, ANSYS Multiphysics, and
-                                CATIA.</p>
-                            <div class="facility-meta">
-                                <i class="fas fa-cube"></i> <span>Industrial 3D Printing &bull; ANSYS /
-                                    SolidWorks</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 reveal-on-scroll stagger-6">
                     <div class="facility-hover-card">
                         <img src="img/uninfra7.png" alt="Departmental Library" loading="lazy">
-                        <div class="facility-hover-overlay">
-                            <span class="facility-badge">Digital Library</span>
-                            <h3 class="facility-title">Engineering Library & E-Access Centre</h3>
-                            <p class="facility-desc">Digital access to IEEE Xplore, ScienceDirect, and Springer, over
-                                25,000 physical engineering volumes, air-conditioned silent research cubicles, and
-                                multimedia portals.</p>
-                            <div class="facility-meta">
-                                <i class="fas fa-book-open"></i> <span>25,000+ Volumes &bull; IEEE Xplore Digital
-                                    Access</span>
-                            </div>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
