@@ -55,10 +55,23 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-<style>
+    <style>
         :root {
             --primary: #202657;
             --secondary: #F58220;
+            --primary-accent: #F58220;
+            --pk-primary: #202657;
+            --pk-primary-dark: #12163b;
+            --pk-secondary: #F58220;
+            --pk-secondary-dark: #d96f13;
+            --pk-bg-light: #f8f9fc;
+            --pk-bg-section: #f4f7fc;
+            --pk-border: #e2e8f0;
+            --pk-text: #2d3748;
+            --pk-text-muted: #5a6a85;
+            --pk-radius-sm: 6px;
+            --pk-radius-md: 10px;
+            --pk-radius-lg: 14px;
         }
 
         html,
@@ -593,13 +606,10 @@
             }
         }
 
-        .infra-showcase-section,
-        .infra-showcase-section *,
         .infra-mosaic-grid,
         .infra-mosaic-item,
         .infra-card,
-        .infra-img,
-        .infra-action-btn {
+        .infra-img {
             border-radius: 0 !important;
         }
 
@@ -608,13 +618,14 @@
             align-items: center;
             justify-content: center;
             padding: 12px 28px;
-            background: var(--secondary, #202657);
+            background: var(--secondary, #F58220);
             color: #ffffff !important;
             font-size: 14px;
             font-weight: 700;
             letter-spacing: 0.5px;
             text-decoration: none !important;
-            border: 2px solid var(--primary, #202657);
+            border: 2px solid var(--secondary, #F58220);
+            border-radius: 6px !important;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -689,22 +700,66 @@
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        .infra-card:hover .infra-caption {
+            background: linear-gradient(180deg, rgba(14, 20, 46, 0) 0%, rgba(14, 20, 46, 0.75) 25%, rgba(14, 20, 46, 0.98) 100%);
+            padding-bottom: 18px;
+        }
+
+        .infra-caption-tag {
+            display: inline-block;
+            color: var(--secondary, #F58220);
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 3px;
+        }
 
         .infra-caption-title {
             color: #ffffff;
             font-weight: 700;
-            font-size: 12px;
+            font-size: 1.05rem;
             margin-bottom: 2px;
             line-height: 1.3;
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+        }
+
+        .infra-mosaic-item:nth-child(1) .infra-caption-title {
+            font-size: 1.35rem;
+            margin-bottom: 4px;
+        }
+
+        .infra-caption-desc {
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 12px;
+            margin-bottom: 0;
+            line-height: 1.4;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .infra-mosaic-item:nth-child(1) .infra-caption-desc {
+            font-size: 13.5px;
         }
 
         @media (max-width: 575px) {
             .infra-caption {
                 padding: 16px 12px 10px 12px;
             }
+
+            .infra-caption-tag {
+                font-size: 10px;
+            }
+
             .infra-caption-title {
                 font-size: 0.95rem;
+            }
+
+            .infra-mosaic-item:nth-child(1) .infra-caption-title {
+                font-size: 1.15rem;
+            }
+
+            .infra-caption-desc {
+                font-size: 11px;
             }
         }
 
@@ -992,692 +1047,703 @@
             }
         }
 
-:root {
-    --nav-primary: #202657;
-    --nav-secondary: #F58220;
-    --nav-white: #FFFFFF;
-    --nav-text-dark: #1E293B;
-    --nav-text-muted: #64748B;
-    --nav-border: #EEF2F6;
-    --nav-shadow-sticky: 0 4px 20px rgba(0, 0, 0, 0.08);
-}
+        :root {
+            --nav-primary: #202657;
+            --nav-secondary: #F58220;
+            --nav-white: #FFFFFF;
+            --nav-text-dark: #1E293B;
+            --nav-text-muted: #64748B;
+            --nav-border: #EEF2F6;
+            --nav-shadow-sticky: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
 
-.contemporary-navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1040;
-    padding: 16px 0;
-    background: transparent;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+        .contemporary-navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1040;
+            padding: 16px 0;
+            background: transparent;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            transition: background-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                 padding 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                 box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
+        }
 
-.contemporary-navbar.scrolled {
-    background: var(--nav-white) !important;
-    padding: 10px 0 !important;
-    box-shadow: var(--nav-shadow-sticky) !important;
-    border-bottom: 1px solid var(--nav-border) !important;
-}
+        .contemporary-navbar.scrolled {
+            background: var(--nav-white) !important;
+            padding: 10px 0 !important;
+            box-shadow: var(--nav-shadow-sticky) !important;
+            border-bottom: 1px solid var(--nav-border) !important;
+        }
 
-.contemporary-brand {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    text-decoration: none;
-    height: 52px;
-}
+        .contemporary-brand {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            height: 52px;
+        }
 
-.contemporary-logo {
-    height: 52px;
-    width: auto;
-    object-fit: contain;
-    transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+        .contemporary-logo {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1),
                 height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.contemporary-navbar.scrolled .contemporary-logo {
-    height: 44px;
-}
-
-.logo-white {
-    opacity: 1;
-    visibility: visible;
-}
-
-.logo-color {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.contemporary-navbar.scrolled .logo-white {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-}
-
-.contemporary-navbar.scrolled .logo-color {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-}
-
-@media (max-width: 576px) {
-    .contemporary-brand {
-        height: 40px;
-    }
-    .contemporary-logo {
-        height: 40px;
-    }
-    .contemporary-navbar.scrolled .contemporary-logo {
-        height: 36px;
-    }
-}
-
-.contemporary-quick-nav .nav-link {
-    font-size: 14.5px;
-    font-weight: 500;
-    color: #ffffff !important;
-    position: relative;
-    margin: 0 4px;
-    padding: 6px 12px;
-    letter-spacing: 0.3px;
-    transition: color 0.25s ease;
-    text-decoration: none;
-}
-
-.contemporary-quick-nav .nav-link::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: -2px;
-    width: 0;
-    height: 2px;
-    background: var(--nav-secondary);
-    transform: translateX(-50%);
-    transition: width 0.25s ease;
-    border-radius: 2px;
-}
-
-.contemporary-quick-nav .nav-link:hover {
-    color: var(--nav-secondary) !important;
-}
-
-.contemporary-quick-nav .nav-link:hover::after {
-    width: 60%;
-}
-
-.contemporary-navbar.scrolled .contemporary-quick-nav .nav-link {
-    color: var(--nav-primary) !important;
-}
-
-.contemporary-navbar.scrolled .contemporary-quick-nav .nav-link:hover {
-    color: var(--nav-secondary) !important;
-}
-
-.contemporary-hamburger-btn {
-    display: inline-flex !important;
-    align-items: center;
-    gap: 10px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.28);
-    color: #ffffff;
-    border-radius: 999px;
-    padding: 8px 18px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 13px;
-    letter-spacing: 1px;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
-    user-select: none;
-}
-
-.contemporary-hamburger-btn:hover,
-.contemporary-hamburger-btn:focus {
-    background: var(--nav-secondary);
-    border-color: var(--nav-secondary);
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(245, 130, 32, 0.35);
-}
-
-.hamburger-bars {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    width: 18px;
-}
-
-.hamburger-bars .bar {
-    display: block;
-    height: 2px;
-    background: currentColor;
-    border-radius: 2px;
-    transition: all 0.25s ease;
-}
-
-.bar-1, .bar-3 {
-    width: 18px;
-}
-
-.bar-2 {
-    width: 12px;
-}
-
-.contemporary-hamburger-btn:hover .bar-2 {
-    width: 18px;
-}
-
-.contemporary-navbar.scrolled .contemporary-hamburger-btn {
-    background: var(--nav-primary);
-    border-color: var(--nav-primary);
-    color: #ffffff;
-}
-
-.contemporary-navbar.scrolled .contemporary-hamburger-btn:hover {
-    background: var(--nav-secondary);
-    border-color: var(--nav-secondary);
-    color: #ffffff;
-    box-shadow: 0 4px 16px rgba(245, 130, 32, 0.35);
-}
-
-@media (max-width: 576px) {
-    .contemporary-hamburger-btn {
-        padding: 6px 14px;
-        font-size: 12px;
-        gap: 7px;
-    }
-}
-
-.contemporary-menu-offcanvas {
-    position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: translate(-50%, -50%) !important;
-    
-    
-    width: 85vw !important;
-    max-width: 1400px !important;
-    height: 85vh !important;
-    max-height: 85vh !important;
-    border-radius: 12px !important;
-    
-    background: var(--nav-white) !important;
-    color: var(--nav-text-dark) !important;
-    border: 1px solid rgba(226, 232, 240, 0.9) !important;
-    box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22) !important;
-    overflow: hidden !important;
-    display: flex !important;
-    flex-direction: column !important;
-    z-index: 10050 !important;
-
-    
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.35s ease, visibility 0.35s ease !important;
-}
-
-.contemporary-menu-offcanvas.showing,
-.contemporary-menu-offcanvas.show {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transform: translate(-50%, -50%) !important;
-}
-
-.contemporary-menu-offcanvas.hiding {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-    transform: translate(-50%, -50%) !important;
-    transition: opacity 0.35s ease, visibility 0.35s ease !important;
-}
-
-@media (max-width: 991px) {
-    .contemporary-menu-offcanvas {
-        width: 90vw !important;
-        height: 85vh !important;
-        max-height: 85vh !important;
-        border-radius: 12px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .contemporary-menu-offcanvas {
-        width: 94vw !important;
-        height: 90vh !important;
-        max-height: 90vh !important;
-        border-radius: 10px !important;
-    }
-}
-
-.offcanvas-backdrop {
-    z-index: 10040 !important;
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    background-color: rgba(15, 23, 42, 0.55) !important;
-    transition: opacity 0.35s ease !important;
-}
-
-.contemporary-menu-offcanvas .offcanvas-header {
-    background: var(--nav-white);
-    border-bottom: 1px solid var(--nav-border) !important;
-    padding: 18px 32px !important;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-}
-
-.contemporary-menu-offcanvas .offcanvas-title {
-    color: var(--nav-primary) !important;
-    font-size: 26px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.5px;
-    line-height: 1.25;
-    margin: 0;
-}
-
-.contemporary-menu-offcanvas .offcanvas-subtitle {
-    color: var(--nav-text-muted) !important;
-    font-size: 14px !important;
-    font-weight: 400;
-}
-
-.btn-close-contemporary {
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    background: #f1f5f9;
-    border: 1px solid var(--nav-border);
-    color: var(--nav-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    flex-shrink: 0;
-}
-
-.btn-close-contemporary:hover {
-    background: var(--nav-secondary);
-    border-color: var(--nav-secondary);
-    color: #ffffff;
-    transform: rotate(90deg);
-}
-
-@media (max-width: 991px) {
-    .contemporary-menu-offcanvas .offcanvas-header {
-        padding: 16px 24px !important;
-    }
-    .contemporary-menu-offcanvas .offcanvas-title {
-        font-size: 24px !important;
-    }
-    .contemporary-menu-offcanvas .offcanvas-subtitle {
-        font-size: 14px !important;
-    }
-}
-
-@media (max-width: 576px) {
-    .contemporary-menu-offcanvas .offcanvas-header {
-        padding: 14px 18px !important;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-    }
-    .contemporary-menu-offcanvas .offcanvas-title {
-        font-size: 20px !important;
-    }
-    .contemporary-menu-offcanvas .offcanvas-subtitle {
-        font-size: 13px !important;
-    }
-}
-
-.contemporary-menu-offcanvas .offcanvas-body {
-    padding: 24px 32px 32px !important;
-    background: var(--nav-white);
-    overflow-y: auto !important;
-    flex-grow: 1;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-@media (max-width: 768px) {
-    .contemporary-menu-offcanvas .offcanvas-body {
-        padding: 18px 20px 24px !important;
-    }
-}
-
-.custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-    background: #f8fafc;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #cbd5e1;
-    border-radius: 4px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: var(--nav-secondary);
-}
-
-.mega-menu-banner-bar {
-    background: linear-gradient(135deg, rgba(245, 130, 32, 0.08) 0%, rgba(32, 38, 87, 0.04) 100%);
-    border: 1px solid rgba(245, 130, 32, 0.28);
-    border-radius: 10px;
-    padding: 12px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 10px rgba(32, 38, 87, 0.03);
-}
-
-.mega-banner-title {
-    color: var(--nav-primary) !important;
-    font-weight: 700;
-}
-
-.mega-banner-sub {
-    color: var(--nav-text-muted) !important;
-}
-
-.pulse-indicator {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--nav-secondary);
-    box-shadow: 0 0 0 0 rgba(245, 130, 32, 0.7);
-    animation: menuPulse 1.8s infinite;
-}
-
-@keyframes menuPulse {
-    0% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(245, 130, 32, 0.7);
-    }
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 7px rgba(245, 130, 32, 0);
-    }
-    100% {
-        transform: scale(0.95);
-        box-shadow: 0 0 0 0 rgba(245, 130, 32, 0);
-    }
-}
-
-.mega-offcanvas-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.05fr 1.35fr 1.15fr;
-    gap: 28px;
-    margin-bottom: 24px;
-}
-
-@media (max-width: 1199px) {
-    .mega-offcanvas-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 24px;
-    }
-}
-
-@media (max-width: 767px) {
-    .mega-offcanvas-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-}
-
-.mega-col-title {
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    color: var(--nav-primary);
-    margin-bottom: 14px;
-    text-transform: uppercase;
-    padding-bottom: 8px;
-    border-bottom: 2px solid rgba(245, 130, 32, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.mega-col-title i {
-    color: var(--nav-secondary);
-}
-
-.mega-menu-link {
-    display: block;
-    padding: 7px 0;
-    color: var(--nav-primary) !important;
-    text-decoration: none !important;
-    font-size: 0.93rem;
-    font-weight: 500;
-    line-height: 1.4;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    transition: color 0.22s ease, transform 0.22s ease;
-}
-
-.mega-menu-link:hover {
-    color: var(--nav-secondary) !important;
-    transform: translateX(4px);
-    background: transparent !important;
-}
-
-.mega-doc-link {
-    color: var(--nav-text-muted) !important;
-    display: inline-flex;
-    align-items: center;
-    font-size: 0.86rem;
-    padding: 5px 0;
-    transition: color 0.22s ease, transform 0.22s ease;
-    text-decoration: none;
-}
-
-.mega-doc-link:hover {
-    color: var(--nav-secondary) !important;
-    transform: translateX(4px);
-}
-
-.mega-link-card,
-.mega-program-item {
-    display: block !important;
-    padding: 7px 0 !important;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    border-radius: 0 !important;
-    margin-bottom: 0 !important;
-    color: var(--nav-primary) !important;
-    text-decoration: none !important;
-    transition: color 0.22s ease, transform 0.22s ease !important;
-}
-
-.mega-link-card:hover,
-.mega-program-item:hover {
-    background: transparent !important;
-    border-color: transparent !important;
-    box-shadow: none !important;
-    transform: translateX(4px) !important;
-    color: var(--nav-secondary) !important;
-}
-
-.mega-link-text,
-.mega-program-title {
-    color: var(--nav-primary) !important;
-    font-size: 0.93rem !important;
-    font-weight: 500 !important;
-    display: inline-block;
-    transition: color 0.22s ease !important;
-}
-
-.mega-link-card:hover .mega-link-text,
-.mega-program-item:hover .mega-program-title {
-    color: var(--nav-secondary) !important;
-}
-
-.mega-link-card .mega-link-icon,
-.mega-link-card .mega-link-sub {
-    display: none !important;
-}
-
-.mega-admissions-box {
-    background: linear-gradient(145deg, #fff7ed 0%, #f0f4fa 100%);
-    border: 1px solid rgba(245, 130, 32, 0.35);
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 14px;
-    box-shadow: 0 4px 14px rgba(32, 38, 87, 0.04);
-}
-
-.mega-admissions-box h6 {
-    color: var(--nav-primary);
-    font-weight: 700;
-}
-
-.mega-admissions-box p {
-    color: var(--nav-text-dark);
-    font-size: 0.84rem;
-    margin-bottom: 10px;
-}
-
-.mega-contact-card {
-    background: var(--nav-white);
-    border: 1px solid var(--nav-border);
-    border-radius: 10px;
-    padding: 14px;
-    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
-}
-
-.mega-contact-card .contact-title {
-    color: var(--nav-primary);
-    font-weight: 700;
-}
-
-.mega-contact-card a {
-    color: var(--nav-text-muted) !important;
-    text-decoration: none;
-    transition: color 0.22s ease;
-}
-
-.mega-contact-card a:hover {
-    color: var(--nav-secondary) !important;
-}
-
-.mega-social-link {
-    color: var(--nav-text-muted) !important;
-    transition: all 0.22s ease;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background: #f8fafc;
-    border: 1px solid var(--nav-border);
-    text-decoration: none;
-}
-
-.mega-social-link:hover {
-    color: #ffffff !important;
-    background: var(--nav-secondary);
-    border-color: var(--nav-secondary);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(245, 130, 32, 0.35);
-}
-
-.mega-menu-bottom-bar {
-    border-top: 1px solid var(--nav-border);
-    padding-top: 16px;
-    margin-top: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-}
-
-.mega-bottom-links {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    flex-wrap: wrap;
-}
-
-.mega-bottom-link {
-    color: var(--nav-text-muted) !important;
-    font-size: 0.82rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-.mega-bottom-link:hover {
-    color: var(--nav-secondary) !important;
-}
-
-.btn-primary-contemporary {
-    background: var(--nav-secondary);
-    color: #ffffff !important;
-    font-weight: 600;
-    border-radius: 6px;
-    border: none;
-    padding: 7px 16px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    box-shadow: 0 3px 10px rgba(245, 130, 32, 0.28);
-    display: inline-flex;
-    align-items: center;
-}
-
-.btn-primary-contemporary:hover {
-    background: #e06a06;
-    color: #ffffff !important;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(245, 130, 32, 0.4);
-}
-
-.btn-outline-contemporary {
-    background: #ffffff;
-    color: var(--nav-primary) !important;
-    border: 1px solid #cbd5e1;
-    font-weight: 600;
-    border-radius: 6px;
-    padding: 7px 16px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-}
-
-.btn-outline-contemporary:hover {
-    background: var(--nav-primary);
-    color: #ffffff !important;
-    border-color: var(--nav-primary);
-    transform: translateY(-2px);
-}
+        }
+
+        .contemporary-navbar.scrolled .contemporary-logo {
+            height: 44px;
+        }
+
+        .logo-white {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .logo-color {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .contemporary-navbar.scrolled .logo-white {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .contemporary-navbar.scrolled .logo-color {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        @media (max-width: 576px) {
+            .contemporary-brand {
+                height: 40px;
+            }
+
+            .contemporary-logo {
+                height: 40px;
+            }
+
+            .contemporary-navbar.scrolled .contemporary-logo {
+                height: 36px;
+            }
+        }
+
+        .contemporary-quick-nav .nav-link {
+            font-size: 14.5px;
+            font-weight: 500;
+            color: #ffffff !important;
+            position: relative;
+            margin: 0 4px;
+            padding: 6px 12px;
+            letter-spacing: 0.3px;
+            transition: color 0.25s ease;
+            text-decoration: none;
+        }
+
+        .contemporary-quick-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            width: 0;
+            height: 2px;
+            background: var(--nav-secondary);
+            transform: translateX(-50%);
+            transition: width 0.25s ease;
+            border-radius: 2px;
+        }
+
+        .contemporary-quick-nav .nav-link:hover {
+            color: var(--nav-secondary) !important;
+        }
+
+        .contemporary-quick-nav .nav-link:hover::after {
+            width: 60%;
+        }
+
+        .contemporary-navbar.scrolled .contemporary-quick-nav .nav-link {
+            color: var(--nav-primary) !important;
+        }
+
+        .contemporary-navbar.scrolled .contemporary-quick-nav .nav-link:hover {
+            color: var(--nav-secondary) !important;
+        }
+
+        .contemporary-hamburger-btn {
+            display: inline-flex !important;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            color: #ffffff;
+            border-radius: 999px;
+            padding: 8px 18px;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 13px;
+            letter-spacing: 1px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+            user-select: none;
+        }
+
+        .contemporary-hamburger-btn:hover,
+        .contemporary-hamburger-btn:focus {
+            background: var(--nav-secondary);
+            border-color: var(--nav-secondary);
+            color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(245, 130, 32, 0.35);
+        }
+
+        .hamburger-bars {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 18px;
+        }
+
+        .hamburger-bars .bar {
+            display: block;
+            height: 2px;
+            background: currentColor;
+            border-radius: 2px;
+            transition: all 0.25s ease;
+        }
+
+        .bar-1,
+        .bar-3 {
+            width: 18px;
+        }
+
+        .bar-2 {
+            width: 12px;
+        }
+
+        .contemporary-hamburger-btn:hover .bar-2 {
+            width: 18px;
+        }
+
+        .contemporary-navbar.scrolled .contemporary-hamburger-btn {
+            background: var(--nav-primary);
+            border-color: var(--nav-primary);
+            color: #ffffff;
+        }
+
+        .contemporary-navbar.scrolled .contemporary-hamburger-btn:hover {
+            background: var(--nav-secondary);
+            border-color: var(--nav-secondary);
+            color: #ffffff;
+            box-shadow: 0 4px 16px rgba(245, 130, 32, 0.35);
+        }
+
+        @media (max-width: 576px) {
+            .contemporary-hamburger-btn {
+                padding: 6px 14px;
+                font-size: 12px;
+                gap: 7px;
+            }
+        }
+
+        .contemporary-menu-offcanvas {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            right: auto !important;
+            bottom: auto !important;
+            transform: translate(-50%, -50%) !important;
+
+
+            width: 85vw !important;
+            max-width: 1400px !important;
+            height: 85vh !important;
+            max-height: 85vh !important;
+            border-radius: 12px !important;
+
+            background: var(--nav-white) !important;
+            color: var(--nav-text-dark) !important;
+            border: 1px solid rgba(226, 232, 240, 0.9) !important;
+            box-shadow: 0 25px 60px rgba(15, 23, 42, 0.22) !important;
+            overflow: hidden !important;
+            display: flex !important;
+            flex-direction: column !important;
+            z-index: 10050 !important;
+
+
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.35s ease, visibility 0.35s ease !important;
+        }
+
+        .contemporary-menu-offcanvas.showing,
+        .contemporary-menu-offcanvas.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+            pointer-events: auto !important;
+            transform: translate(-50%, -50%) !important;
+        }
+
+        .contemporary-menu-offcanvas.hiding {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            transform: translate(-50%, -50%) !important;
+            transition: opacity 0.35s ease, visibility 0.35s ease !important;
+        }
+
+        @media (max-width: 991px) {
+            .contemporary-menu-offcanvas {
+                width: 90vw !important;
+                height: 85vh !important;
+                max-height: 85vh !important;
+                border-radius: 12px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contemporary-menu-offcanvas {
+                width: 94vw !important;
+                height: 90vh !important;
+                max-height: 90vh !important;
+                border-radius: 10px !important;
+            }
+        }
+
+        .offcanvas-backdrop {
+            z-index: 10040 !important;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            background-color: rgba(15, 23, 42, 0.55) !important;
+            transition: opacity 0.35s ease !important;
+        }
+
+        .contemporary-menu-offcanvas .offcanvas-header {
+            background: var(--nav-white);
+            border-bottom: 1px solid var(--nav-border) !important;
+            padding: 18px 32px !important;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+
+        .contemporary-menu-offcanvas .offcanvas-title {
+            color: var(--nav-primary) !important;
+            font-size: 26px !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.5px;
+            line-height: 1.25;
+            margin: 0;
+        }
+
+        .contemporary-menu-offcanvas .offcanvas-subtitle {
+            color: var(--nav-text-muted) !important;
+            font-size: 14px !important;
+            font-weight: 400;
+        }
+
+        .btn-close-contemporary {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            border: 1px solid var(--nav-border);
+            color: var(--nav-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            flex-shrink: 0;
+        }
+
+        .btn-close-contemporary:hover {
+            background: var(--nav-secondary);
+            border-color: var(--nav-secondary);
+            color: #ffffff;
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 991px) {
+            .contemporary-menu-offcanvas .offcanvas-header {
+                padding: 16px 24px !important;
+            }
+
+            .contemporary-menu-offcanvas .offcanvas-title {
+                font-size: 24px !important;
+            }
+
+            .contemporary-menu-offcanvas .offcanvas-subtitle {
+                font-size: 14px !important;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .contemporary-menu-offcanvas .offcanvas-header {
+                padding: 12px 16px !important;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+            }
+
+            .contemporary-menu-offcanvas .offcanvas-title {
+                font-size: 15px !important;
+                line-height: 1.25 !important;
+            }
+
+            .contemporary-menu-offcanvas .offcanvas-subtitle {
+                font-size: 11.5px !important;
+                display: block;
+            }
+        }
+
+        .contemporary-menu-offcanvas .offcanvas-body {
+            padding: 24px 32px 32px !important;
+            background: var(--nav-white);
+            overflow-y: auto !important;
+            flex-grow: 1;
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .contemporary-menu-offcanvas .offcanvas-body {
+                padding: 18px 20px 24px !important;
+            }
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: var(--nav-secondary);
+        }
+
+        .mega-menu-banner-bar {
+            background: linear-gradient(135deg, rgba(245, 130, 32, 0.08) 0%, rgba(32, 38, 87, 0.04) 100%);
+            border: 1px solid rgba(245, 130, 32, 0.28);
+            border-radius: 10px;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 10px rgba(32, 38, 87, 0.03);
+        }
+
+        .mega-banner-title {
+            color: var(--nav-primary) !important;
+            font-weight: 700;
+        }
+
+        .mega-banner-sub {
+            color: var(--nav-text-muted) !important;
+        }
+
+        .pulse-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--nav-secondary);
+            box-shadow: 0 0 0 0 rgba(245, 130, 32, 0.7);
+            animation: menuPulse 1.8s infinite;
+        }
+
+        @keyframes menuPulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(245, 130, 32, 0.7);
+            }
+
+            70% {
+                transform: scale(1);
+                box-shadow: 0 0 0 7px rgba(245, 130, 32, 0);
+            }
+
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(245, 130, 32, 0);
+            }
+        }
+
+        .mega-offcanvas-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.05fr 1.35fr 1.15fr;
+            gap: 28px;
+            margin-bottom: 24px;
+        }
+
+        @media (max-width: 1199px) {
+            .mega-offcanvas-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .mega-offcanvas-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .mega-col-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            color: var(--nav-primary);
+            margin-bottom: 14px;
+            text-transform: uppercase;
+            padding-bottom: 8px;
+            border-bottom: 2px solid rgba(245, 130, 32, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mega-col-title i {
+            color: var(--nav-secondary);
+        }
+
+        .mega-menu-link {
+            display: block;
+            padding: 7px 0;
+            color: var(--nav-primary) !important;
+            text-decoration: none !important;
+            font-size: 0.93rem;
+            font-weight: 500;
+            line-height: 1.4;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            transition: color 0.22s ease, transform 0.22s ease;
+        }
+
+        .mega-menu-link:hover {
+            color: var(--nav-secondary) !important;
+            transform: translateX(4px);
+            background: transparent !important;
+        }
+
+        .mega-doc-link {
+            color: var(--nav-text-muted) !important;
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.86rem;
+            padding: 5px 0;
+            transition: color 0.22s ease, transform 0.22s ease;
+            text-decoration: none;
+        }
+
+        .mega-doc-link:hover {
+            color: var(--nav-secondary) !important;
+            transform: translateX(4px);
+        }
+
+        .mega-link-card,
+        .mega-program-item {
+            display: block !important;
+            padding: 7px 0 !important;
+            background: transparent !important;
+            border: none !important;
+            box-shadow: none !important;
+            border-radius: 0 !important;
+            margin-bottom: 0 !important;
+            color: var(--nav-primary) !important;
+            text-decoration: none !important;
+            transition: color 0.22s ease, transform 0.22s ease !important;
+        }
+
+        .mega-link-card:hover,
+        .mega-program-item:hover {
+            background: transparent !important;
+            border-color: transparent !important;
+            box-shadow: none !important;
+            transform: translateX(4px) !important;
+            color: var(--nav-secondary) !important;
+        }
+
+        .mega-link-text,
+        .mega-program-title {
+            color: var(--nav-primary) !important;
+            font-size: 0.93rem !important;
+            font-weight: 500 !important;
+            display: inline-block;
+            transition: color 0.22s ease !important;
+        }
+
+        .mega-link-card:hover .mega-link-text,
+        .mega-program-item:hover .mega-program-title {
+            color: var(--nav-secondary) !important;
+        }
+
+        .mega-link-card .mega-link-icon,
+        .mega-link-card .mega-link-sub {
+            display: none !important;
+        }
+
+        .mega-admissions-box {
+            background: linear-gradient(145deg, #fff7ed 0%, #f0f4fa 100%);
+            border: 1px solid rgba(245, 130, 32, 0.35);
+            border-radius: 10px;
+            padding: 16px;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 14px rgba(32, 38, 87, 0.04);
+        }
+
+        .mega-admissions-box h6 {
+            color: var(--nav-primary);
+            font-weight: 700;
+        }
+
+        .mega-admissions-box p {
+            color: var(--nav-text-dark);
+            font-size: 0.84rem;
+            margin-bottom: 10px;
+        }
+
+        .mega-contact-card {
+            background: var(--nav-white);
+            border: 1px solid var(--nav-border);
+            border-radius: 10px;
+            padding: 14px;
+            box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
+        }
+
+        .mega-contact-card .contact-title {
+            color: var(--nav-primary);
+            font-weight: 700;
+        }
+
+        .mega-contact-card a {
+            color: var(--nav-text-muted) !important;
+            text-decoration: none;
+            transition: color 0.22s ease;
+        }
+
+        .mega-contact-card a:hover {
+            color: var(--nav-secondary) !important;
+        }
+
+        .mega-social-link {
+            color: var(--nav-text-muted) !important;
+            transition: all 0.22s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: #f8fafc;
+            border: 1px solid var(--nav-border);
+            text-decoration: none;
+        }
+
+        .mega-social-link:hover {
+            color: #ffffff !important;
+            background: var(--nav-secondary);
+            border-color: var(--nav-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(245, 130, 32, 0.35);
+        }
+
+        .mega-menu-bottom-bar {
+            border-top: 1px solid var(--nav-border);
+            padding-top: 16px;
+            margin-top: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .mega-bottom-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .mega-bottom-link {
+            color: var(--nav-text-muted) !important;
+            font-size: 0.82rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .mega-bottom-link:hover {
+            color: var(--nav-secondary) !important;
+        }
+
+        .btn-primary-contemporary {
+            background: var(--nav-secondary);
+            color: #ffffff !important;
+            font-weight: 600;
+            border-radius: 6px;
+            border: none;
+            padding: 7px 16px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 3px 10px rgba(245, 130, 32, 0.28);
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .btn-primary-contemporary:hover {
+            background: #e06a06;
+            color: #ffffff !important;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(245, 130, 32, 0.4);
+        }
+
+        .btn-outline-contemporary {
+            background: #ffffff;
+            color: var(--nav-primary) !important;
+            border: 1px solid #cbd5e1;
+            font-weight: 600;
+            border-radius: 6px;
+            padding: 7px 16px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-outline-contemporary:hover {
+            background: var(--nav-primary);
+            color: #ffffff !important;
+            border-color: var(--nav-primary);
+            transform: translateY(-2px);
+        }
 
         .floating-actions-dock {
             display: contents;
@@ -2019,278 +2085,468 @@
             }
         }
 
-html, body {
-    max-width: 100%;
-    overflow-x: clip;
-}
+        @media (max-width: 991px) {
+            .contemporary-navbar {
+                padding: 12px 0;
+            }
 
-img, video, iframe {
-    max-width: 100%;
-}
+            .contemporary-navbar.scrolled {
+                padding: 8px 0 !important;
+            }
+        }
 
-@media (max-width: 991px) {
-    .contemporary-navbar {
-        padding: 12px 0;
-    }
-    .contemporary-navbar.scrolled {
-        padding: 8px 0 !important;
-    }
-}
+        @media (max-width: 576px) {
+            .contemporary-navbar {
+                padding: 10px 0;
+            }
 
-@media (max-width: 576px) {
-    .contemporary-navbar {
-        padding: 10px 0;
-    }
-    .contemporary-navbar .container {
-        gap: 8px;
-    }
-    .contemporary-brand {
-        height: 38px;
-        max-width: calc(100% - 115px);
-    }
-    .contemporary-logo {
-        height: 38px;
-        max-width: 100%;
-    }
-    .contemporary-navbar.scrolled .contemporary-logo {
-        height: 34px;
-    }
-    .contemporary-menu-offcanvas .offcanvas-header {
-        gap: 10px;
-    }
-    .contemporary-menu-offcanvas .offcanvas-header img {
-        height: 32px !important;
-        width: auto;
-    }
-    .contemporary-menu-offcanvas .offcanvas-title {
-        font-size: 18px !important;
-    }
-    .contemporary-menu-offcanvas .offcanvas-subtitle {
-        font-size: 12px !important;
-    }
-    .mega-menu-banner-bar {
-        padding: 12px 14px;
-        gap: 10px;
-        margin-bottom: 18px;
-    }
-    .mega-menu-bottom-bar {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-    .mega-bottom-links {
-        gap: 10px 14px;
-    }
-    .pk-footer .footer-logo {
-        max-width: 210px;
-        width: 100%;
-        height: auto;
-    }
-    .pk-footer-cta .pk-apply-btn {
-        width: 100%;
-        text-align: center;
-    }
-    .pk-footer-bottom div {
-        flex-wrap: wrap;
-        gap: 10px 16px;
-        justify-content: center;
-    }
-}
+            .contemporary-navbar .container {
+                gap: 8px;
+            }
 
-@media (max-width: 480px) {
-    .mega-menu-banner-bar > div:last-child {
-        width: 100%;
-        flex-wrap: wrap;
-    }
-    .mega-menu-banner-bar .btn {
-        flex: 1 1 120px;
-        justify-content: center;
-    }
-}
+            .contemporary-brand {
+                height: 38px;
+                max-width: calc(100% - 115px);
+            }
 
-@media (max-width: 420px) {
-    .contemporary-menu-offcanvas .offcanvas-body {
-        padding: 16px 14px 22px !important;
-    }
-    .contemporary-menu-offcanvas .offcanvas-header {
-        padding: 12px 14px !important;
-    }
-}
+            .contemporary-logo {
+                height: 38px;
+                max-width: 100%;
+            }
 
-@media (max-width: 390px) {
-    .contemporary-brand {
-        height: 32px;
-        max-width: calc(100% - 102px);
-    }
-    .contemporary-logo {
-        height: 32px;
-    }
-    .contemporary-navbar.scrolled .contemporary-logo {
-        height: 30px;
-    }
-    .contemporary-hamburger-btn {
-        padding: 5px 11px;
-        font-size: 11px;
-        gap: 6px;
-        letter-spacing: 0.6px;
-    }
-    .hamburger-bars {
-        width: 15px;
-    }
-    .bar-1, .bar-3 {
-        width: 15px;
-    }
-    .bar-2 {
-        width: 10px;
-    }
-    .contemporary-menu-offcanvas .offcanvas-header img {
-        height: 28px !important;
-    }
-    .contemporary-menu-offcanvas .offcanvas-title {
-        font-size: 16px !important;
-    }
-    .floating-actions-dock {
-        padding: 7px 6px calc(7px + env(safe-area-inset-bottom, 0px)) !important;
-        gap: 5px !important;
-    }
-    .floating-left,
-    .floating-right {
-        gap: 5px !important;
-    }
-    .float-btn {
-        font-size: 11px !important;
-        padding: 6px 4px !important;
-        gap: 4px !important;
-        height: 40px !important;
-        min-height: 40px !important;
-    }
-    .float-btn i {
-        font-size: 11.5px !important;
-    }
-}
+            .contemporary-navbar.scrolled .contemporary-logo {
+                height: 34px;
+            }
 
-@media (max-width: 340px) {
-    .float-btn {
-        font-size: 10.5px !important;
-        padding: 5px 3px !important;
-        gap: 3px !important;
-    }
-    .float-btn i {
-        font-size: 10.5px !important;
-    }
-}
+            .contemporary-menu-offcanvas .offcanvas-header {
+                gap: 10px;
+            }
 
-@media (max-width: 768px) {
-    .pk-footer {
-        padding-bottom: 18px;
-    }
-}
+            .contemporary-menu-offcanvas .offcanvas-header img {
+                height: 32px !important;
+                width: auto;
+            }
 
-@media (max-width: 991px), (hover: none) {
-    .image-wrapper .overlay-content {
-        padding: 1.4rem;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.12) 100%);
-    }
-    .image-wrapper .overlay-content h1,
-    .image-wrapper .overlay-content h2,
-    .image-wrapper .overlay-content p,
-    .image-wrapper .cta-btn {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    .image-wrapper .overlay-content p {
-        font-size: 0.92rem;
-        margin-bottom: 0.9rem;
-    }
-}
+            .contemporary-menu-offcanvas .offcanvas-title {
+                font-size: 18px !important;
+            }
 
-@media (max-width: 991px) {
-    .events-bg-img {
-        background-attachment: scroll;
-    }
-    .school-categories-section {
-        padding: 3.5rem 0;
-    }
-}
+            .contemporary-menu-offcanvas .offcanvas-subtitle {
+                font-size: 12px !important;
+            }
 
-@media (max-width: 768px) {
-    [style*="text-align: justify"] {
-        text-align: left !important;
-    }
-    .about-section,
-    .infra-showcase-section {
-        padding: 52px 0 !important;
-    }
-    .school-categories-section {
-        padding: 3rem 0;
-    }
-    .image-wrapper {
-        height: 290px;
-    }
-    .overlay-content h1,
-    .overlay-content h2 {
-        font-size: 1.35rem;
-    }
-}
+            .mega-menu-banner-bar {
+                padding: 12px 14px;
+                gap: 10px;
+                margin-bottom: 18px;
+            }
 
-@media (max-width: 576px) {
-    .event-scroll-item {
-        flex: 0 0 86%;
-        min-width: 245px;
-    }
-    .event-template-card {
-        height: auto;
-        min-height: 390px;
-    }
-    .event-template-img {
-        height: 200px;
-    }
-    .carousel-control-btn {
-        width: 38px;
-        height: 38px;
-    }
-}
+            .mega-menu-bottom-bar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
 
-@media (max-width: 420px) {
-    .hero-title {
-        font-size: clamp(1.55rem, 7vw, 2rem);
-    }
-    .hero-subtitle {
-        font-size: 0.9rem;
-    }
-    .school-categories {
-        grid-template-columns: 1fr;
-    }
-    .image-wrapper {
-        height: 265px;
-    }
-}
+            .mega-bottom-links {
+                gap: 10px 14px;
+            }
 
-@media (max-width: 360px) {
-    .event-scroll-item {
-        flex: 0 0 92%;
-        min-width: 230px;
-    }
-    .ngi-inst-logo-box {
-        width: 78px !important;
-        height: 78px !important;
-        min-width: 78px !important;
-    }
-    .ngi-inst-title {
-        font-size: 12px !important;
-    }
-    .ngi-tab-btn {
-        font-size: 12.5px;
-        padding: 8px 10px;
-        gap: 5px;
-    }
-}
+            .pk-footer .footer-logo {
+                max-width: 210px;
+                width: 100%;
+                height: auto;
+            }
+
+            .pk-footer-cta .pk-apply-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .pk-footer-bottom div {
+                flex-wrap: wrap;
+                gap: 10px 16px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mega-menu-banner-bar>div:last-child {
+                width: 100%;
+                flex-wrap: wrap;
+            }
+
+            .mega-menu-banner-bar .btn {
+                flex: 1 1 120px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .contemporary-menu-offcanvas .offcanvas-body {
+                padding: 16px 14px 22px !important;
+            }
+
+            .contemporary-menu-offcanvas .offcanvas-header {
+                padding: 12px 14px !important;
+            }
+        }
+
+        @media (max-width: 390px) {
+            .contemporary-brand {
+                height: 32px;
+                max-width: calc(100% - 102px);
+            }
+
+            .contemporary-logo {
+                height: 32px;
+            }
+
+            .contemporary-navbar.scrolled .contemporary-logo {
+                height: 30px;
+            }
+
+            .contemporary-hamburger-btn {
+                padding: 5px 11px;
+                font-size: 11px;
+                gap: 6px;
+                letter-spacing: 0.6px;
+            }
+
+            .hamburger-bars {
+                width: 15px;
+            }
+
+            .bar-1,
+            .bar-3 {
+                width: 15px;
+            }
+
+            .bar-2 {
+                width: 10px;
+            }
+
+            .contemporary-menu-offcanvas .offcanvas-header img {
+                height: 28px !important;
+            }
+
+            .contemporary-menu-offcanvas .offcanvas-title {
+                font-size: 16px !important;
+            }
+
+            .floating-actions-dock {
+                padding: 7px 6px calc(7px + env(safe-area-inset-bottom, 0px)) !important;
+                gap: 5px !important;
+            }
+
+            .floating-left,
+            .floating-right {
+                gap: 5px !important;
+            }
+
+            .float-btn {
+                font-size: 11px !important;
+                padding: 6px 4px !important;
+                gap: 4px !important;
+                height: 40px !important;
+                min-height: 40px !important;
+            }
+
+            .float-btn i {
+                font-size: 11.5px !important;
+            }
+        }
+
+        @media (max-width: 340px) {
+            .float-btn {
+                font-size: 10.5px !important;
+                padding: 5px 3px !important;
+                gap: 3px !important;
+            }
+
+            .float-btn i {
+                font-size: 10.5px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .pk-footer {
+                padding-bottom: 18px;
+            }
+        }
+
+        @media (max-width: 991px),
+        (hover: none) {
+            .image-wrapper .overlay-content {
+                padding: 1.4rem;
+                background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.5) 55%, rgba(0, 0, 0, 0.12) 100%);
+            }
+
+            .image-wrapper .overlay-content h1,
+            .image-wrapper .overlay-content h2,
+            .image-wrapper .overlay-content p,
+            .image-wrapper .cta-btn {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            .image-wrapper .overlay-content p {
+                font-size: 0.92rem;
+                margin-bottom: 0.9rem;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .events-bg-img {
+                background-attachment: scroll;
+            }
+
+            .school-categories-section {
+                padding: 3.5rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            [style*="text-align: justify"] {
+                text-align: left !important;
+            }
+
+            .about-section,
+            .infra-showcase-section {
+                padding: 52px 0 !important;
+            }
+
+            .school-categories-section {
+                padding: 3rem 0;
+            }
+
+            .image-wrapper {
+                height: 290px;
+            }
+
+            .overlay-content h1,
+            .overlay-content h2 {
+                font-size: 1.35rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .event-scroll-item {
+                flex: 0 0 86%;
+                min-width: 245px;
+            }
+
+            .event-template-card {
+                height: auto;
+                min-height: 390px;
+            }
+
+            .event-template-img {
+                height: 200px;
+            }
+
+            .carousel-control-btn {
+                width: 38px;
+                height: 38px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .hero-title {
+                font-size: clamp(1.55rem, 7vw, 2rem);
+            }
+
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+
+            .school-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .image-wrapper {
+                height: 265px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .event-scroll-item {
+                flex: 0 0 92%;
+                min-width: 230px;
+            }
+
+            .ngi-inst-logo-box {
+                width: 78px !important;
+                height: 78px !important;
+                min-width: 78px !important;
+            }
+
+            .ngi-inst-title {
+                font-size: 12px !important;
+            }
+
+            .ngi-tab-btn {
+                font-size: 12.5px;
+                padding: 8px 10px;
+                gap: 5px;
+            }
+        }
+
+        .lifetime-awards-section {
+            position: relative;
+            background: linear-gradient(180deg, #f8fafd 0%, #edf2f9 100%);
+            border-top: 1px solid #e2e8f0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+
+        .awardee-poster-card {
+            position: relative;
+            width: 100%;
+            max-width: 440px;
+            aspect-ratio: 3 / 4;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            background: #0f172a;
+            box-shadow: 0 18px 45px rgba(32, 38, 87, 0.18), 0 4px 14px rgba(245, 130, 32, 0.15);
+            border: 1px solid rgba(245, 130, 32, 0.35);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .awardee-poster-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 24px 50px rgba(32, 38, 87, 0.22), 0 6px 18px rgba(245, 130, 32, 0.25);
+        }
+
+        .awardee-poster-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .awardee-poster-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .awardee-top-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            z-index: 3;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .awardee-caption-pill {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 12px rgba(32, 38, 87, 0.06);
+            max-width: 440px;
+            margin: 14px auto 0 auto;
+            border-radius: 30px;
+            padding: 8px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .lifetime-awards-section .carousel-indicators {
+            position: static;
+            margin: 14px 0 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lifetime-awards-section .carousel-indicators [data-bs-target] {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: rgba(32, 38, 87, 0.3);
+            border: none;
+            margin: 0 4px;
+            transition: all 0.3s ease;
+        }
+
+        .lifetime-awards-section .carousel-indicators .active {
+            width: 26px;
+            border-radius: 12px;
+            background-color: #F58220 !important;
+        }
+
+        .lifetime-carousel-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(32, 38, 87, 0.88);
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 5;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+
+        .lifetime-carousel-btn:hover {
+            background: #F58220;
+            color: #ffffff;
+            border-color: #ffffff;
+            transform: translateY(-50%) scale(1.08);
+        }
+
+        .lifetime-carousel-btn.prev {
+            left: -12px;
+        }
+
+        .lifetime-carousel-btn.next {
+            right: -12px;
+        }
+
+        @media (max-width: 991.98px) {
+            .awardee-poster-card {
+                max-width: 380px;
+            }
+
+            .lifetime-carousel-btn.prev {
+                left: 6px;
+            }
+
+            .lifetime-carousel-btn.next {
+                right: 6px;
+            }
+        }
+
+        @media (max-width: 575.98px) {
+            .awardee-poster-card {
+                max-width: 310px;
+            }
+
+            .awardee-caption-pill {
+                max-width: 310px;
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .lifetime-awards-section h2 {
+                font-size: 1.85rem !important;
+            }
+        }
     </style>
-
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-lg contemporary-navbar fixed-top">
+    <nav class="navbar navbar-expand-lg contemporary-navbar fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
             <a class="navbar-brand contemporary-brand py-0 me-2 me-lg-4" href="index.html">
                 <img src="https://pkdasuniversity.ac.in/assets/images/home/pk-das-logo-white.png" alt="PKDAS University"
@@ -2343,7 +2599,8 @@ img, video, iframe {
                     <h6 class="offcanvas-title" id="siteMenuOffcanvasLabel">
                         P K DAS DEEMED TO BE UNIVERSITY
                     </h6>
-                    <small class="offcanvas-subtitle">Under Section 3 of UGC Act, 1956 &bull; Coimbatore, Tamil Nadu</small>
+                    <small class="offcanvas-subtitle">Under Section 3 of UGC Act, 1956 &bull; Coimbatore, Tamil
+                        Nadu</small>
                 </div>
             </div>
             <button type="button" class="btn-close-contemporary" data-bs-dismiss="offcanvas" aria-label="Close">
@@ -2357,7 +2614,8 @@ img, video, iframe {
                 <div class="d-flex align-items-center gap-2">
                     <span class="pulse-indicator"></span>
                     <span class="mega-banner-title small">ADMISSIONS OPEN 2026-27:</span>
-                    <span class="mega-banner-sub small d-none d-md-inline">Undergraduate, Postgraduate &amp; Multidisciplinary Research</span>
+                    <span class="mega-banner-sub small d-none d-md-inline">Undergraduate, Postgraduate &amp;
+                        Multidisciplinary Research</span>
                 </div>
                 <div class="d-flex align-items-center gap-2">
                     <a href="https://applynow.pkdasuniversity.net" target="_blank" rel="noopener noreferrer"
@@ -2379,26 +2637,31 @@ img, video, iframe {
                     </div>
                     <div class="mega-links-wrap">
                         <a href="https://pkdasuniversity.ac.in/about-us" class="mega-menu-link">About PKDAS</a>
-                        <a href="https://pkdasuniversity.ac.in/about/founder-chairman" class="mega-menu-link">Guiding Leadership</a>
+                        <a href="https://pkdasuniversity.ac.in/about/founder-chairman" class="mega-menu-link">Guiding
+                            Leadership</a>
                         <a href="index.html#leadership" class="mega-menu-link">Faculties</a>
-                        <a href="https://pkdasuniversity.ac.in/campus" class="mega-menu-link">Campus &amp; Facilities</a>
+                        <a href="https://pkdasuniversity.ac.in/campus" class="mega-menu-link">Campus &amp;
+                            Facilities</a>
                         <a href="index.html#events" class="mega-menu-link">Conclaves &amp; News</a>
                         <div class="pt-2">
                             <a href="https://pkdasuniversity.ac.in/uploads/2026/11/code-of-conduct-students.pdf"
                                 target="_blank" rel="noopener noreferrer" class="mega-doc-link">
-                                <i class="bi bi-file-earmark-pdf me-2" style="color: var(--nav-secondary);"></i>UGC Notification
+                                <i class="bi bi-file-earmark-pdf me-2" style="color: var(--nav-secondary);"></i>UGC
+                                Notification
                             </a>
                         </div>
                         <div>
                             <a href="https://pkdasuniversity.ac.in/uploads/2026/11/Memorandum-of-Association.pdf"
                                 target="_blank" rel="noopener noreferrer" class="mega-doc-link">
-                                <i class="bi bi-file-earmark-pdf me-2" style="color: var(--nav-secondary);"></i>Memorandum of Association
+                                <i class="bi bi-file-earmark-pdf me-2"
+                                    style="color: var(--nav-secondary);"></i>Memorandum of Association
                             </a>
                         </div>
                         <div>
                             <a href="https://pkdasuniversity.ac.in/uploads/2026/11/Memorandum-of-Association.pdf"
                                 target="_blank" rel="noopener noreferrer" class="mega-doc-link">
-                                <i class="bi bi-file-earmark-pdf me-2" style="color: var(--nav-secondary);"></i>India India Gazette
+                                <i class="bi bi-file-earmark-pdf me-2" style="color: var(--nav-secondary);"></i>India
+                                India Gazette
                             </a>
                         </div>
                     </div>
@@ -2422,11 +2685,16 @@ img, video, iframe {
                         <i class="bi bi-mortarboard"></i>
                     </div>
                     <div class="mega-links-wrap">
-                        <a href="programs/btech-avionics-drone.html" class="mega-menu-link">B.Tech Avionic and Drone Engineering</a>
-                        <a href="programs/AI&amp;MI.html" class="mega-menu-link">B.Tech Artificial Intelligence and Medical Imaging</a>
-                        <a href="programs/medical-Radiology.html" class="mega-menu-link">Bachelor of Medical Radiology and Imaging Technology</a>
-                        <a href="School-of-medical.html" class="mega-menu-link">Bachelor of Medical Laboratory Science</a>
-                        <a href="programs/Anaesthesia.html" class="mega-menu-link">Bachelor of Anaesthesia and Operation Theatre Technology</a>
+                        <a href="programs/btech-avionics-drone.html" class="mega-menu-link">B.Tech Avionic and Drone
+                            Engineering</a>
+                        <a href="programs/AI&amp;MI.html" class="mega-menu-link">B.Tech Artificial Intelligence and
+                            Medical Imaging</a>
+                        <a href="programs/medical-Radiology.html" class="mega-menu-link">Bachelor of Medical Radiology
+                            and Imaging Technology</a>
+                        <a href="School-of-medical.html" class="mega-menu-link">Bachelor of Medical Laboratory
+                            Science</a>
+                        <a href="programs/Anaesthesia.html" class="mega-menu-link">Bachelor of Anaesthesia and Operation
+                            Theatre Technology</a>
                         <a href="School-of-arts.html" class="mega-menu-link">BA Performing Arts (Hons)</a>
                         <a href="School-of-arts.html" class="mega-menu-link">B.Sc. Indology (Hons)</a>
                     </div>
@@ -2441,7 +2709,8 @@ img, video, iframe {
                     <div class="mega-admissions-box">
                         <span class="badge bg-warning text-dark fw-bold mb-2">APPLY TODAY</span>
                         <h6 class="fw-bold mb-1">Admissions Open 2026-27</h6>
-                        <p class="small mb-3">Begin your journey in Multidisciplinary Domain through This Distinct Deemed university.</p>
+                        <p class="small mb-3">Begin your journey in Multidisciplinary Domain through This Distinct
+                            Deemed university.</p>
                         <a href="https://applynow.pkdasuniversity.net/application-form" target="_blank"
                             rel="noopener noreferrer" class="btn btn-sm btn-primary-contemporary w-100 py-2 fw-bold">
                             Online Application Form <i class="bi bi-arrow-right ms-1"></i>
@@ -3146,333 +3415,176 @@ img, video, iframe {
             <a class="btn btn-primary-custom" href="https://pkdasuniversity.ac.in/events">View More</a>
         </div>
     </section>
-<style>
+    <section class="py-5 lifetime-awards-section" id="lifetime-awards">
+        <div class="container py-3 py-lg-4">
+            <div class="row align-items-center g-4 g-xl-5">
 
-.lifetime-awards-section {
-    position: relative;
-    background: linear-gradient(180deg, #f8fafd 0%, #edf2f9 100%);
-    border-top: 1px solid #e2e8f0;
-    border-bottom: 1px solid #e2e8f0;
-}
+                <div class="col-lg-6">
+                    <div class="lifetime-awards-info pe-lg-4">
+                        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3"
+                            style="background: rgba(245, 130, 32, 0.12); border: 1px solid rgba(245, 130, 32, 0.35);">
+                            <i class="bi bi-trophy-fill" style="color: #F58220; font-size: 14px;"></i>
+                            <span class="text-uppercase fw-bold"
+                                style="color: #d96800; font-size: 12px; letter-spacing: 1.5px;">Honouring
+                                Excellence</span>
+                        </div>
 
+                        <h2 class="display-6 fw-bold mb-3" style="color: var(--primary, #202657); line-height: 1.25;">
+                            LifeTime Achievement <span style="color: var(--secondary, #F58220);">Awards</span>
+                        </h2>
 
-.awardee-poster-card {
-    position: relative;
-    width: 100%;
-    max-width: 440px;
-    aspect-ratio: 3 / 4;
-    margin: 0 auto;
-    border-radius: 20px;
-    overflow: hidden;
-    background: #0f172a;
-    box-shadow: 0 18px 45px rgba(32, 38, 87, 0.18), 0 4px 14px rgba(245, 130, 32, 0.15);
-    border: 1px solid rgba(245, 130, 32, 0.35);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.awardee-poster-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 24px 50px rgba(32, 38, 87, 0.22), 0 6px 18px rgba(245, 130, 32, 0.25);
-}
-.awardee-poster-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
-}
-.awardee-poster-card:hover img {
-    transform: scale(1.02);
-}
+                        <p class="fw-semibold mb-3" style="color: #334155; font-size: 1.05rem; line-height: 1.6;">
+                            Instituted in revered memory of our Founder Chairman, Late Shri P. K. Das, celebrating
+                            educational visionaries who dedicate their lives to shaping future generations.
+                        </p>
 
-/* Floating Top Badge */
-.awardee-top-badge {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    z-index: 3;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
+                        <p class="text-muted mb-4" style="text-align: justify; font-size: 14.5px; line-height: 1.75;">
+                            The prestigious <strong>Shri P. K. Das Memorial Lifetime Achievement Award</strong> is a
+                            flagship pan-India recognition instituted by the Nehru Group of Institutions. Conferred
+                            annually, it honours eminent academicians, scientists, and educational leaders who have
+                            rendered <strong>more than 25 years of distinguished service</strong> in higher education
+                            across government, aided, and self-financing universities.
+                        </p>
 
-/* Small Caption Pill Below Poster */
-.awardee-caption-pill {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 12px rgba(32, 38, 87, 0.06);
-    max-width: 440px;
-    margin: 14px auto 0 auto;
-    border-radius: 30px;
-    padding: 8px 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-
-/* Carousel Indicators & Controls */
-.lifetime-awards-section .carousel-indicators {
-    position: static;
-    margin: 14px 0 0 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.lifetime-awards-section .carousel-indicators [data-bs-target] {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: rgba(32, 38, 87, 0.3);
-    border: none;
-    margin: 0 4px;
-    transition: all 0.3s ease;
-}
-.lifetime-awards-section .carousel-indicators .active {
-    width: 26px;
-    border-radius: 12px;
-    background-color: #F58220 !important;
-}
-
-.lifetime-carousel-btn {
-    position: absolute;
-    top: 45%;
-    transform: translateY(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(32, 38, 87, 0.88);
-    color: #ffffff;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 5;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
-}
-.lifetime-carousel-btn:hover {
-    background: #F58220;
-    color: #ffffff;
-    border-color: #ffffff;
-    transform: translateY(-50%) scale(1.08);
-}
-.lifetime-carousel-btn.prev {
-    left: -12px;
-}
-.lifetime-carousel-btn.next {
-    right: -12px;
-}
-
-@media (max-width: 991.98px) {
-    .awardee-poster-card {
-        max-width: 380px;
-    }
-    .lifetime-carousel-btn.prev {
-        left: 6px;
-    }
-    .lifetime-carousel-btn.next {
-        right: 6px;
-    }
-}
-
-@media (max-width: 575.98px) {
-    .awardee-poster-card {
-        max-width: 310px;
-    }
-    .awardee-caption-pill {
-        max-width: 310px;
-        font-size: 12px;
-        padding: 6px 12px;
-    }
-    .lifetime-awards-section h2 {
-        font-size: 1.85rem !important;
-    }
-}
-</style>
-
-
-
-<section class="py-5 lifetime-awards-section" id="lifetime-awards">
-    <div class="container py-3 py-lg-4">
-        <div class="row align-items-center g-4 g-xl-5">
-
-            <div class="col-lg-6">
-                <div class="lifetime-awards-info pe-lg-4">
-                    <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill mb-3"
-                        style="background: rgba(245, 130, 32, 0.12); border: 1px solid rgba(245, 130, 32, 0.35);">
-                        <i class="bi bi-trophy-fill" style="color: #F58220; font-size: 14px;"></i>
-                        <span class="text-uppercase fw-bold" style="color: #d96800; font-size: 12px; letter-spacing: 1.5px;">Honouring Excellence</span>
-                    </div>
-
-                    <h2 class="display-6 fw-bold mb-3" style="color: var(--primary, #202657); line-height: 1.25;">
-                        LifeTime Achievement <span style="color: var(--secondary, #F58220);">Awards</span>
-                    </h2>
-
-                    <p class="fw-semibold mb-3" style="color: #334155; font-size: 1.05rem; line-height: 1.6;">
-                        Instituted in revered memory of our Founder Chairman, Late Shri P. K. Das, celebrating educational visionaries who dedicate their lives to shaping future generations.
-                    </p>
-
-                    <p class="text-muted mb-4" style="text-align: justify; font-size: 14.5px; line-height: 1.75;">
-                        The prestigious <strong>Shri P. K. Das Memorial Lifetime Achievement Award</strong> is a flagship pan-India recognition instituted by the Nehru Group of Institutions. Conferred annually, it honours eminent academicians, scientists, and educational leaders who have rendered <strong>more than 25 years of distinguished service</strong> in higher education across government, aided, and self-financing universities.
-                    </p>
-
-                    <div class="d-flex align-items-center gap-3 flex-wrap">
-                        <a href="https://nehrucolleges.com" target="_blank" class="btn text-white px-4 py-2 rounded-pill fw-semibold shadow-sm"
-                            style="background: var(--primary, #202657); font-size: 14px;">
-                            <i class="bi bi-award me-1 text-warning"></i> View Awards Legacy
-                        </a>
-                        <div class="d-flex align-items-center gap-2">
-                            <button class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center"
-                                type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide="prev"
-                                style="width: 40px; height: 40px;" aria-label="Previous Awardee">
-                                <i class="bi bi-arrow-left"></i>
-                            </button>
-                            <button class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center"
-                                type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide="next"
-                                style="width: 40px; height: 40px;" aria-label="Next Awardee">
-                                <i class="bi bi-arrow-right"></i>
-                            </button>
+                        <div class="d-flex align-items-center gap-3 flex-wrap">
+                            <a href="https://nehrucolleges.com" target="_blank"
+                                class="btn text-white px-4 py-2 rounded-pill fw-semibold shadow-sm"
+                                style="background: var(--primary, #202657); font-size: 14px;">
+                                <i class="bi bi-award me-1 text-warning"></i> View Awards Legacy
+                            </a>
+                            <div class="d-flex align-items-center gap-2">
+                                <button
+                                    class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center"
+                                    type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide="prev"
+                                    style="width: 40px; height: 40px;" aria-label="Previous Awardee">
+                                    <i class="bi bi-arrow-left"></i>
+                                </button>
+                                <button
+                                    class="btn btn-outline-dark rounded-circle d-flex align-items-center justify-content-center"
+                                    type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide="next"
+                                    style="width: 40px; height: 40px;" aria-label="Next Awardee">
+                                    <i class="bi bi-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-lg-6">
-                <div class="position-relative mx-auto" style="max-width: 460px;">
+                <div class="col-lg-6">
+                    <div class="position-relative mx-auto" style="max-width: 460px;">
 
-                    <button class="lifetime-carousel-btn prev" type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide="prev" aria-label="Previous">
-                        <i class="bi bi-chevron-left fs-5"></i>
-                    </button>
-                    <button class="lifetime-carousel-btn next" type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide="next" aria-label="Next">
-                        <i class="bi bi-chevron-right fs-5"></i>
-                    </button>
+                        <button class="lifetime-carousel-btn prev" type="button"
+                            data-bs-target="#lifetimeAwardsCarousel" data-bs-slide="prev" aria-label="Previous">
+                            <i class="bi bi-chevron-left fs-5"></i>
+                        </button>
+                        <button class="lifetime-carousel-btn next" type="button"
+                            data-bs-target="#lifetimeAwardsCarousel" data-bs-slide="next" aria-label="Next">
+                            <i class="bi bi-chevron-right fs-5"></i>
+                        </button>
 
-                    <div id="lifetimeAwardsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4800" data-bs-pause="hover">
+                        <div id="lifetimeAwardsCarousel" class="carousel slide" data-bs-ride="carousel"
+                            data-bs-interval="4800" data-bs-pause="hover">
 
-                        <div class="carousel-inner">
+                            <div class="carousel-inner">
 
-                            <div class="carousel-item active">
-                                <div class="awardee-poster-card">
-                                    <div class="awardee-top-badge">
-                                        <span class="badge px-3 py-2 text-white shadow-sm" style="background: rgba(32,38,87,0.92); backdrop-filter: blur(4px); font-size: 11px;">
-                                            <i class="bi bi-trophy-fill text-warning me-1"></i> Lifetime Achievement
-                                        </span>
-                                        <span class="badge px-2 py-2 text-dark shadow-sm" style="background: #F58220; font-size: 11px; font-weight: 700;">
-                                            2026
-                                        </span>
+                                <div class="carousel-item active">
+                                    <div class="awardee-poster-card">
+                                        <div class="awardee-top-badge">
+                                        </div>
+                                        <img src="https://pkdasuniversity.ac.in/appdata/lta/lifetime-award-balagurusamy.jpeg"
+                                            alt="Prof. Dr. E. Balagurusamy - Lifetime Achievement Award 2026"
+                                            loading="lazy">
                                     </div>
-                                    <img src="Images/lifetime-award-balagurusamy.jpg" alt="Prof. Dr. E. Balagurusamy - Lifetime Achievement Award 2026" loading="lazy">
+                                    <div class="awardee-caption-pill">
+                                        <strong style="color: var(--primary, #202657); font-size: 13.5px;">Prof. Dr. E.
+                                            Balagurusamy</strong>
+                                        <span class="text-muted small">&bull; Former Vice Chancellor of Anna University,
+                                            Chennai, Member of the Union Public Service Commission (UPSC), New Delhi,
+                                            and Chairman of EBG Foundation, Coimbatore</span>
+                                    </div>
                                 </div>
-                                <div class="awardee-caption-pill">
-                                    <span class="badge rounded-pill px-2 py-1" style="background: var(--primary, #202657); color: #fff; font-size: 11px;">2026 Awardee</span>
-                                    <strong style="color: var(--primary, #202657); font-size: 13.5px;">Prof. Dr. E. Balagurusamy</strong>
-                                    <span class="text-muted small">&bull; Former Vice Chancellor, Anna University</span>
+
+                                <div class="carousel-item">
+                                    <div class="awardee-poster-card">
+                                        <div class="awardee-top-badge">
+                                        </div>
+                                        <img src="https://pkdasuniversity.ac.in/appdata/lta/lifetime-award-bakthavasalan.jpeg"
+                                            alt="Padma Shri Dr. G. Bakthavathsalam" loading="lazy">
+                                    </div>
+                                    <div class="awardee-caption-pill">
+                                        <strong style="color: var(--primary, #202657); font-size: 13.5px;">Padma Shri
+                                            Dr. G. Bakthavathsalam</strong>
+                                        <span class="text-muted small">&bull; Founder Chairman of KG Hospital and KG
+                                            Information Systems Limited (KGISL), Coimbatore</span>
+                                    </div>
                                 </div>
+
+                                <div class="carousel-item">
+                                    <div class="awardee-poster-card">
+                                        <div class="awardee-top-badge">
+                                        </div>
+                                        <img src="https://pkdasuniversity.ac.in/appdata/lta/lifetime-award-ramachandran.jpeg"
+                                            alt="Dr. V. Ramachandran" loading="lazy">
+                                    </div>
+                                    <div class="awardee-caption-pill">
+                                        <strong style="color: var(--primary, #202657); font-size: 13.5px;">Dr. V.
+                                            Ramachandran</strong>
+                                        <span class="text-muted small">&bull; Former Vice-Chancellor of Anna University
+                                            of Technology, Tiruchirappalli, and Former Director of the National
+                                            Institute of Technology (NIT), Nagalan</span>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="awardee-poster-card">
+                                        <div class="awardee-top-badge">
+                                        </div>
+                                        <img src="https://pkdasuniversity.ac.in/appdata/lta/lifetime-award-ashok-rao.jpeg"
+                                            alt="DR. Ashok Rao" loading="lazy">
+                                    </div>
+                                    <div class="awardee-caption-pill">
+                                        <strong style="color: var(--primary, #202657); font-size: 13.5px;">DR. Ashok
+                                            Rao</strong>
+                                        <span class="text-muted small">&bull; Former Head, Network Project,
+                                            CEDT, IISC, Bangalore</span>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <div class="awardee-poster-card">
+                                        <div class="awardee-top-badge">
+                                        </div>
+                                        <img src="https://pkdasuniversity.ac.in/appdata/lta/lifetime-award-nambinarayanan.jpeg"
+                                            alt="Padma Bhushan Shri S. Nambi Narayanan" loading="lazy">
+                                    </div>
+                                    <div class="awardee-caption-pill">
+                                        <strong style="color: var(--primary, #202657); font-size: 13.5px;">Padma Bhushan
+                                            Shri S. Nambi Narayanan</strong>
+                                        <span class="text-muted small">&bull; Former ISRO Scientist</span>
+                                    </div>
+                                </div>
+
                             </div>
 
-                            <div class="carousel-item">
-                                <div class="awardee-poster-card">
-                                    <div class="awardee-top-badge">
-                                        <span class="badge px-3 py-2 text-white shadow-sm" style="background: rgba(32,38,87,0.92); backdrop-filter: blur(4px); font-size: 11px;">
-                                            <i class="bi bi-star-fill text-warning me-1"></i> Lifetime Achievement
-                                        </span>
-                                        <span class="badge px-2 py-2 text-dark shadow-sm" style="background: #F58220; font-size: 11px; font-weight: 700;">
-                                            17th Annual
-                                        </span>
-                                    </div>
-                                    <img src="Images/lifetime-award-vanavarayar.jpg" alt="Dr. B. K. Krishnaraj Vanavarayar" loading="lazy">
-                                </div>
-                                <!-- Small Caption Pill -->
-                                <div class="awardee-caption-pill">
-                                    <span class="badge rounded-pill px-2 py-1" style="background: var(--primary, #202657); color: #fff; font-size: 11px;">Eminent Leader</span>
-                                    <strong style="color: var(--primary, #202657); font-size: 13.5px;">Dr. B. K. Krishnaraj Vanavarayar</strong>
-                                    <span class="text-muted small">&bull; Chairman, Kumaraguru Institutions</span>
-                                </div>
-                            </div>
-
-                            <!-- Slide 3: Dr. Kadirvelu -->
-                            <div class="carousel-item">
-                                <div class="awardee-poster-card">
-                                    <div class="awardee-top-badge">
-                                        <span class="badge px-3 py-2 text-white shadow-sm" style="background: rgba(32,38,87,0.92); backdrop-filter: blur(4px); font-size: 11px;">
-                                            <i class="bi bi-star-fill text-warning me-1"></i> Lifetime Achievement
-                                        </span>
-                                        <span class="badge px-2 py-2 text-dark shadow-sm" style="background: #F58220; font-size: 11px; font-weight: 700;">
-                                            Science &amp; DRDO
-                                        </span>
-                                    </div>
-                                    <img src="Images/lifetime-award-kadirvelu.jpg" alt="Dr. Kadirvelu" loading="lazy">
-                                </div>
-                                <!-- Small Caption Pill -->
-                                <div class="awardee-caption-pill">
-                                    <span class="badge rounded-pill px-2 py-1" style="background: var(--primary, #202657); color: #fff; font-size: 11px;">Eminent Scientist</span>
-                                    <strong style="color: var(--primary, #202657); font-size: 13.5px;">Dr. Kadirvelu</strong>
-                                    <span class="text-muted small">&bull; Bharathiar University &amp; DRDO</span>
-                                </div>
-                            </div>
-
-                            <!-- Slide 4: Dr. S. Karutha Pandian -->
-                            <div class="carousel-item">
-                                <div class="awardee-poster-card">
-                                    <div class="awardee-top-badge">
-                                        <span class="badge px-3 py-2 text-white shadow-sm" style="background: rgba(32,38,87,0.92); backdrop-filter: blur(4px); font-size: 11px;">
-                                            <i class="bi bi-star-fill text-warning me-1"></i> Lifetime Achievement
-                                        </span>
-                                        <span class="badge px-2 py-2 text-dark shadow-sm" style="background: #F58220; font-size: 11px; font-weight: 700;">
-                                            Biotechnology
-                                        </span>
-                                    </div>
-                                    <img src="Images/lifetime-award-pandian.jpg" alt="Dr. S. Karutha Pandian" loading="lazy">
-                                </div>
-                                <!-- Small Caption Pill -->
-                                <div class="awardee-caption-pill">
-                                    <span class="badge rounded-pill px-2 py-1" style="background: var(--primary, #202657); color: #fff; font-size: 11px;">Biotechnology</span>
-                                    <strong style="color: var(--primary, #202657); font-size: 13.5px;">Dr. S. Karutha Pandian</strong>
-                                    <span class="text-muted small">&bull; Senior Professor, Alagappa University</span>
-                                </div>
-                            </div>
-
-                            <!-- Slide 5: Dr. K. Ilango -->
-                            <div class="carousel-item">
-                                <div class="awardee-poster-card">
-                                    <div class="awardee-top-badge">
-                                        <span class="badge px-3 py-2 text-white shadow-sm" style="background: rgba(32,38,87,0.92); backdrop-filter: blur(4px); font-size: 11px;">
-                                            <i class="bi bi-star-fill text-warning me-1"></i> Honorary Lifetime Award
-                                        </span>
-                                        <span class="badge px-2 py-2 text-dark shadow-sm" style="background: #F58220; font-size: 11px; font-weight: 700;">
-                                            Governance
-                                        </span>
-                                    </div>
-                                    <img src="Images/lifetime-award-ilango.jpg" alt="Dr. K. Ilango" loading="lazy">
-                                </div>
-                                <!-- Small Caption Pill -->
-                                <div class="awardee-caption-pill">
-                                    <span class="badge rounded-pill px-2 py-1" style="background: var(--primary, #202657); color: #fff; font-size: 11px;">University Leader</span>
-                                    <strong style="color: var(--primary, #202657); font-size: 13.5px;">Dr. K. Ilango</strong>
-                                    <span class="text-muted small">&bull; Former Vice-Chancellor, Bharathiar University</span>
-                                </div>
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                                <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="4"
+                                    aria-label="Slide 5"></button>
                             </div>
 
                         </div>
-
-                        <!-- Bottom Carousel Indicators -->
-                        <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                            <button type="button" data-bs-target="#lifetimeAwardsCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
-                        </div>
-
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 
 
@@ -3855,7 +3967,8 @@ img, video, iframe {
                         <img src="img/new-img/Uni-temp (3).jpeg" alt="Drone Flight Testing Arena" class="infra-img"
                             loading="lazy">
                         <div class="infra-caption">
-                            <p class="infra-caption-title">Side View<p>
+                            <p class="infra-caption-title">Side View
+                            <p>
                         </div>
                     </a>
                 </div>
@@ -4059,7 +4172,7 @@ img, video, iframe {
         </div>
     </section>
 
-        <footer class="pk-footer">
+    <footer class="pk-footer">
         <div class="container">
             <div class="pk-footer-main">
 
@@ -4101,7 +4214,8 @@ img, video, iframe {
                         <li><a href="School-of-medical.html">School of Health Sciences</a></li>
                         <li><a href="School-of-arts.html">School of Social Sciences</a></li>
                         <li><a href="future-programs.html">Programmes Offered</a></li>
-                        <li><a href="https://applynow.pkdasuniversity.net/application-form" target="_blank" rel="noopener noreferrer">Admissions</a></li>
+                        <li><a href="https://applynow.pkdasuniversity.net/application-form" target="_blank"
+                                rel="noopener noreferrer">Admissions</a></li>
                     </ul>
                 </div>
 
@@ -4138,7 +4252,8 @@ img, video, iframe {
                     <h3>Shape Your Future With PK DAS University</h3>
                     <p>Discover your potential. Explore our academic programmes.</p>
                 </div>
-                <a href="https://applynow.pkdasuniversity.net/application-form" target="_blank" rel="noopener noreferrer" class="pk-apply-btn">APPLY NOW →</a>
+                <a href="https://applynow.pkdasuniversity.net/application-form" target="_blank"
+                    rel="noopener noreferrer" class="pk-apply-btn">APPLY NOW →</a>
             </div>
 
             <div class="pk-footer-bottom">
@@ -4166,7 +4281,8 @@ img, video, iframe {
                 <i class="fas fa-comment-dots"></i><span><span class="d-none d-sm-inline">Enquiry </span>Now</span>
             </a>
 
-            <a href="https://applynow.pkdasuniversity.net/application-form" target="_blank" rel="noopener noreferrer" class="float-btn apply">
+            <a href="https://applynow.pkdasuniversity.net/application-form" target="_blank" rel="noopener noreferrer"
+                class="float-btn apply">
                 <i class="fas fa-user-graduate"></i><span>Apply Now</span>
             </a>
         </div>
@@ -4197,7 +4313,7 @@ img, video, iframe {
 
         </div>
     </footer> -->
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
