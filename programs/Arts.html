@@ -74,12 +74,11 @@
             transition: all 0.3s ease;
         }
 
-        /* Hero Section */
         .program-hero {
             position: relative;
             padding: 110px 0 100px;
             background: linear-gradient(135deg, rgba(16, 20, 56, 0.94) 0%, rgba(32, 38, 87, 0.88) 55%, rgba(10, 77, 104, 0.92) 100%),
-                        url('../Assets/MRIT/Picture1.jpg');
+                        url('../Images/nehru-theater.png');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -247,7 +246,6 @@
             line-height: 1.3;
         }
 
-        /* Section Global Typography */
         .section-tag {
             display: inline-flex;
             align-items: center;
@@ -290,7 +288,6 @@
             }
         }
 
-        /* Programme Overview Box */
         .overview-box {
             position: relative;
         }
@@ -333,7 +330,6 @@
             box-shadow: 0 12px 30px rgba(32, 38, 87, 0.15);
         }
 
-        /* Vision & Mission Section */
         .vm-section {
             background: linear-gradient(135deg, #101438 0%, #18204c 100%);
             padding: 95px 0;
@@ -696,7 +692,6 @@
             border-color: var(--secondary);
         }
 
-        /* Admissions CTA Banner */
         .admissions-cta-banner {
             background: linear-gradient(135deg, #202657 0%, #101438 100%);
             border-radius: 24px;
@@ -779,6 +774,16 @@
             }
         }
 
+:root {
+    --nav-primary: #202657;
+    --nav-secondary: #F58220;
+    --nav-white: #FFFFFF;
+    --nav-text-dark: #1E293B;
+    --nav-text-muted: #64748B;
+    --nav-border: #EEF2F6;
+    --nav-shadow-sticky: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
 .contemporary-navbar {
     position: fixed;
     top: 0;
@@ -795,10 +800,13 @@
 }
 
 .contemporary-navbar.scrolled {
-    background: var(--nav-white) !important;
+    background: #FFFFFF !important;
+    background: var(--nav-white, #FFFFFF) !important;
     padding: 10px 0 !important;
-    box-shadow: var(--nav-shadow-sticky) !important;
-    border-bottom: 1px solid var(--nav-border) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: var(--nav-shadow-sticky, 0 4px 20px rgba(0, 0, 0, 0.08)) !important;
+    border-bottom: 1px solid #EEF2F6 !important;
+    border-bottom: 1px solid var(--nav-border, #EEF2F6) !important;
 }
 
 .contemporary-brand {
@@ -2182,20 +2190,6 @@ img, video, iframe {
         font-size: 0.83rem;
     }
 }
-    
-        .program-hero.hero-arts {
-            position: relative;
-            padding: 130px 0 100px;
-            background: linear-gradient(135deg, rgba(16, 20, 56, 0.94) 0%, rgba(32, 38, 87, 0.88) 50%, rgba(138, 43, 226, 0.78) 100%),
-                        url('https://i.pinimg.com/1200x/79/cf/03/79cf03957738f293de2f7d5d0c1d2af3.jpg');
-            background-size: cover;
-            background-position: center 25%;
-            background-attachment: fixed;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-        }
 
         .highlight-card {
             background: #ffffff;
@@ -2252,7 +2246,6 @@ img, video, iframe {
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(32, 38, 87, 0.03);
             position: relative;
-            border-left: 4px solid var(--primary);
         }
         .differentiator-card:hover {
             transform: translateY(-4px);
@@ -2660,7 +2653,7 @@ img, video, iframe {
         </div>
     </div>
 
-    <header class="program-hero hero-arts" id="hero">
+    <header class="program-hero" id="hero">
         <div class="container position-relative" style="z-index: 10;">
             <div class="row align-items-center">
                 <div class="col-lg-10 col-xl-9">
@@ -2670,7 +2663,7 @@ img, video, iframe {
                             <i class="fas fa-arrow-left"></i>
                             <span>Back</span>
                         </a> /
-                        <span>B.A. Performing Arts (Hons)</span>
+                        <span>Performing Arts</span>
                     </div>
 
                     <div class="hero-institution">
@@ -2681,7 +2674,7 @@ img, video, iframe {
                     </div>
 
                     <h1>
-                        Bachelor of Performing Arts <span>(Honours)</span>
+                        Bachelor of Arts in <span>Performing Arts (Honours)</span>
                         <span class="program-acronym-pill">B.A. (Hons)</span>
                     </h1>
 
@@ -2753,18 +2746,6 @@ img, video, iframe {
                             The programme is aligned with contemporary educational frameworks and industry requirements, preparing graduates for rewarding careers in <strong>Performing Arts, Media, Entertainment, Education, Cultural Organizations, and Creative Industries</strong>.
                         </p>
                     </div>
-
-                    <div class="d-flex flex-wrap gap-3 mt-4">
-                        <div class="d-flex align-items-center gap-2 px-3 py-2 bg-light border rounded-pill small fw-semibold text-dark">
-                            <i class="bi bi-music-note-beamed text-primary"></i> Vocal &amp; Instrumental Music
-                        </div>
-                        <div class="d-flex align-items-center gap-2 px-3 py-2 bg-light border rounded-pill small fw-semibold text-dark">
-                            <i class="bi bi-person-arms-up text-primary"></i> Bharathanatyam &amp; Kathak
-                        </div>
-                        <div class="d-flex align-items-center gap-2 px-3 py-2 bg-light border rounded-pill small fw-semibold text-dark">
-                            <i class="bi bi-mask text-primary"></i> Dramaturgy &amp; Theatre Arts
-                        </div>
-                    </div>
                 </div>
 
                 <div class="col-lg-5">
@@ -2773,12 +2754,6 @@ img, video, iframe {
                             <img src="https://i.pinimg.com/1200x/79/cf/03/79cf03957738f293de2f7d5d0c1d2af3.jpg"
                                  alt="B.A. Performing Arts at PKDAS University"
                                  class="img-fluid w-100" style="min-height: 420px; object-fit: cover;">
-                        </div>
-                        <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white rounded-bottom-4"
-                             style="background: linear-gradient(180deg, transparent 0%, rgba(16, 20, 56, 0.95) 100%);">
-                            <span class="badge mb-1" style="background:#F58220;">Distinct Faculty</span>
-                            <h6 class="mb-0 fw-bold">Classical Stage &amp; Recording Studios</h6>
-                            <small class="text-white-50">Nehru Cultural Centre &bull; Coimbatore</small>
                         </div>
                     </div>
                 </div>
@@ -2799,7 +2774,6 @@ img, video, iframe {
             </div>
 
             <div class="row g-4">
-                <!-- Highlight 1 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-translate"></i></div>
@@ -2808,7 +2782,6 @@ img, video, iframe {
                     </div>
                 </div>
 
-                <!-- Highlight 2 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-megaphone-fill"></i></div>
@@ -2817,7 +2790,6 @@ img, video, iframe {
                     </div>
                 </div>
 
-                <!-- Highlight 3 -->
                 <div class="col-md-6 col-lg-4">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-camera-reels-fill"></i></div>
@@ -2826,7 +2798,6 @@ img, video, iframe {
                     </div>
                 </div>
 
-                <!-- Highlight 4 -->
                 <div class="col-md-6 col-lg-6">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-building-check"></i></div>
@@ -2835,7 +2806,6 @@ img, video, iframe {
                     </div>
                 </div>
 
-                <!-- Highlight 5 -->
                 <div class="col-md-12 col-lg-6">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-diagram-3-fill"></i></div>
@@ -2970,7 +2940,6 @@ img, video, iframe {
             </div>
 
             <div class="row g-4">
-                <!-- Music Stream -->
                 <div class="col-lg-4">
                     <div class="stream-card">
                         <div class="stream-header music">
@@ -3000,7 +2969,6 @@ img, video, iframe {
                     </div>
                 </div>
 
-                <!-- Dance Stream -->
                 <div class="col-lg-4">
                     <div class="stream-card">
                         <div class="stream-header dance">
@@ -3031,7 +2999,6 @@ img, video, iframe {
                     </div>
                 </div>
 
-                <!-- Theatre Stream -->
                 <div class="col-lg-4">
                     <div class="stream-card">
                         <div class="stream-header theatre">
@@ -3110,7 +3077,6 @@ img, video, iframe {
                 </div>
             </div>
 
-            <!-- Co-curricular Timeline Ribbon -->
             <div class="mt-5 p-4 rounded-4" style="background: linear-gradient(135deg, rgba(32, 38, 87, 0.04) 0%, rgba(245, 130, 32, 0.06) 100%); border: 1px dashed rgba(245, 130, 32, 0.4);">
                 <div class="row align-items-center g-3">
                     <div class="col-lg-3 text-center text-lg-start">
@@ -3447,8 +3413,10 @@ img, video, iframe {
         s.src = "https://widgets.in4.nopaperforms.com/emwgts.js";
         document.body.appendChild(s);
 
-        let enquiryWidget = new NpfWidgetsInit({
-            widgetId: "9df5b6776d1e8ffba75fb680b7e91a7c",
+        try {
+            if (typeof NpfWidgetsInit !== 'undefined') {
+                let enquiryWidget = new NpfWidgetsInit({
+                    widgetId: "9df5b6776d1e8ffba75fb680b7e91a7c",
             baseurl: "widgets.in4.nopaperforms.com",
             formTitle: "Enquiry Form",
             titleColor: "#FF0033",
@@ -3456,19 +3424,29 @@ img, video, iframe {
             iframeHeight: "518px",
             buttonbgColor: "#4c79dc",
             buttonTextColor: "#FFF"
-        });
+                });
+            }
+        } catch(e) {}
 
-        let brochureWidget = new NpfWidgetsInit({
-            widgetId: "14a27886d392b2febe0c08280439adfd",
-            baseurl: "widgets.in4.nopaperforms.com",
-            formTitle: "Brochure Enquiry Form",
-            titleColor: "#FF0033",
-            backgroundColor: "#ddd",
-            iframeHeight: "518px",
-            buttonbgColor: "#4c79dc",
-            buttonTextColor: "#FFF"
-        });
+        try {
+            if (typeof NpfWidgetsInit !== 'undefined') {
+                let brochureWidget = new NpfWidgetsInit({
+                    widgetId: "14a27886d392b2febe0c08280439adfd",
+                    baseurl: "widgets.in4.nopaperforms.com",
+                    formTitle: "Brochure Enquiry Form",
+                    titleColor: "#FF0033",
+                    backgroundColor: "#ddd",
+                    iframeHeight: "518px",
+                    buttonbgColor: "#4c79dc",
+                    buttonTextColor: "#FFF"
+                });
+            }
+        } catch (e) {
+            console.warn("NPF Widget initialization deferred:", e);
+        }
+    </script>
 
+    <script>
         (function () {
             'use strict';
 
