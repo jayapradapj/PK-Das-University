@@ -1985,6 +1985,104 @@ img, video, iframe {
         font-size: 0.83rem;
     }
 }
+    
+        .overview-image-wrap {
+            width: 100%;
+            height: 420px;
+            min-height: 320px;
+            max-height: 420px;
+            overflow: hidden;
+        }
+        .overview-image-wrap img {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            max-height: 420px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        @media (max-width: 767.98px) {
+            .overview-image-wrap {
+                height: 320px;
+                min-height: 260px;
+                max-height: 320px;
+            }
+            .overview-image-wrap img {
+                min-height: 260px;
+                max-height: 320px;
+            }
+        }
+
+    
+        /* === UNIFIED HERO & TYPOGRAPHY STANDARD === */
+        :root {
+            --primary: #202657;
+            --secondary: #F58220;
+            --nav-primary: #202657;
+            --nav-secondary: #F58220;
+            --nav-white: #FFFFFF;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15.5px;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        .program-hero {
+            position: relative;
+            padding: 130px 0 90px !important;
+            min-height: 390px;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .program-hero h1 {
+            color: #ffffff;
+            font-size: clamp(2rem, 3.4vw, 2.85rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.2 !important;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            margin-bottom: 12px;
+        }
+        .program-hero p {
+            line-height: 1.7;
+        }
+        .contemporary-navbar.scrolled {
+            background: #FFFFFF !important;
+            background: var(--nav-white) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        }
+        @media (max-width: 991.98px) {
+            .program-hero {
+                padding: 112px 0 72px !important;
+                min-height: 320px;
+                background-attachment: scroll !important;
+            }
+            .program-hero h1 {
+                font-size: 2.1rem !important;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .program-hero {
+                padding: 98px 0 58px !important;
+                min-height: auto;
+            }
+            .program-hero h1 {
+                font-size: 1.72rem !important;
+                line-height: 1.25 !important;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .program-hero {
+                padding: 90px 0 50px !important;
+            }
+            .program-hero h1 {
+                font-size: 1.5rem !important;
+            }
+        }
+        /* === END UNIFIED STANDARD === */
     </style>
 </head>
 
@@ -2264,7 +2362,7 @@ School of Engineering & Tech</strong>
 
     <section class="py-5 mt-4" id="overview">
         <div class="container py-4">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-start g-5">
 
                 <div class="col-lg-7">
                     <span class="section-title">Programme Overview</span>
@@ -2282,9 +2380,9 @@ School of Engineering & Tech</strong>
                 <div class="col-lg-5">
                     <div class="position-relative">
                         <div class="rounded-4 overflow-hidden shadow-lg border">
-                            <img src="../Images/AI &amp; MI.jpg"
+                            <div class="overview-image-wrap"><img src="../Images/AI &amp; MI.jpg"
                                  alt="AI-Powered Diagnostics — The Future of Medical Imaging"
-                                 class="img-fluid w-100" style="min-height: 360px; object-fit: cover;">
+                                 ></div>
                             <div class="img-caption-bar">
                                 <i class="bi bi-cpu-fill"></i>
                                 <span>AI-Powered Diagnostics — The Future of Medical Imaging</span>

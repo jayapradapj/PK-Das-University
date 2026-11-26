@@ -2450,6 +2450,104 @@ img, video, iframe {
             box-shadow: 0 6px 20px rgba(32, 38, 87, 0.05);
         }
 
+    
+        .overview-image-wrap {
+            width: 100%;
+            height: 420px;
+            min-height: 320px;
+            max-height: 420px;
+            overflow: hidden;
+        }
+        .overview-image-wrap img {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            max-height: 420px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        @media (max-width: 767.98px) {
+            .overview-image-wrap {
+                height: 320px;
+                min-height: 260px;
+                max-height: 320px;
+            }
+            .overview-image-wrap img {
+                min-height: 260px;
+                max-height: 320px;
+            }
+        }
+
+    
+        /* === UNIFIED HERO & TYPOGRAPHY STANDARD === */
+        :root {
+            --primary: #202657;
+            --secondary: #F58220;
+            --nav-primary: #202657;
+            --nav-secondary: #F58220;
+            --nav-white: #FFFFFF;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15.5px;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        .program-hero {
+            position: relative;
+            padding: 130px 0 90px !important;
+            min-height: 390px;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .program-hero h1 {
+            color: #ffffff;
+            font-size: clamp(2rem, 3.4vw, 2.85rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.2 !important;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            margin-bottom: 12px;
+        }
+        .program-hero p {
+            line-height: 1.7;
+        }
+        .contemporary-navbar.scrolled {
+            background: #FFFFFF !important;
+            background: var(--nav-white) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        }
+        @media (max-width: 991.98px) {
+            .program-hero {
+                padding: 112px 0 72px !important;
+                min-height: 320px;
+                background-attachment: scroll !important;
+            }
+            .program-hero h1 {
+                font-size: 2.1rem !important;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .program-hero {
+                padding: 98px 0 58px !important;
+                min-height: auto;
+            }
+            .program-hero h1 {
+                font-size: 1.72rem !important;
+                line-height: 1.25 !important;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .program-hero {
+                padding: 90px 0 50px !important;
+            }
+            .program-hero h1 {
+                font-size: 1.5rem !important;
+            }
+        }
+        /* === END UNIFIED STANDARD === */
     </style>
 </head>
 
@@ -2730,30 +2828,29 @@ img, video, iframe {
 
     <section class="py-5 mt-4" id="overview">
         <div class="container py-4">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-start g-5">
 
                 <div class="col-lg-7">
-                    <span class="section-title">Programme Overview</span>
+                    <h2 class="display-6 fw-bold mb-4" style="color: var(--primary);">B.A. Performing Arts (Honours)</h2>
 
-                    <div class="overview-box mt-4">
-                        <p class="text-dark mb-3" style="text-align: justify; font-size: 15px; line-height: 1.75;">
-                            The <strong>Four-Year B.A. Performing Arts (Honours)</strong> programme is a comprehensive and interdisciplinary undergraduate degree designed to nurture artistic excellence, creativity, cultural awareness, and professional competence in the field of performing arts. The programme provides students with rigorous training in performance, theory, history, aesthetics, production, and contemporary artistic practices.
+                    <div class="overview-box mt-3">
+                        <p class="text-dark mb-3" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                            The Four-Year B.A. Performing Arts (Honours) programme is a comprehensive and interdisciplinary undergraduate degree designed to nurture artistic excellence, creativity, cultural awareness, and professional competence in the field of performing arts. The programme provides students with rigorous training in performance, theory, history, aesthetics, production, and contemporary artistic practices.
                         </p>
-                        <p class="text-dark mb-3" style="text-align: justify; font-size: 15px; line-height: 1.75;">
-                            The curriculum integrates traditional and modern approaches to <strong>Theatre, Dance, Music, Stagecraft, and Performance Studies</strong>, enabling students to develop technical proficiency, critical thinking, and artistic expression. Through classroom instruction, studio practice, workshops, productions, internships, and community engagement, students gain hands-on experience and industry exposure.
-                        </p>    
-                        <p class="mb-0 text-dark" style="text-align: justify; font-size: 15px; line-height: 1.75;">
-                            The programme is aligned with contemporary educational frameworks and industry requirements, preparing graduates for rewarding careers in <strong>Performing Arts, Media, Entertainment, Education, Cultural Organizations, and Creative Industries</strong>.
+                        <p class="text-dark mb-3" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                            The curriculum integrates traditional and modern approaches to Theatre, Dance, Music, Stagecraft, and Performance Studies, enabling students to develop technical proficiency, critical thinking, and artistic expression. Through classroom instruction, studio practice, workshops, productions, internships, and community engagement, students gain hands-on experience and industry exposure.
+                        </p>
+                        <p class="mb-0 text-dark" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                            The programme is aligned with contemporary educational frameworks and industry requirements, preparing graduates for careers in Performing Arts, Media, Entertainment, Education, Cultural Organizations, and Creative Industries.
                         </p>
                     </div>
                 </div>
 
                 <div class="col-lg-5">
                     <div class="position-relative">
-                        <div class="rounded-4 overflow-hidden shadow-lg border">
+                        <div class="rounded-4 overflow-hidden shadow-lg border overview-image-wrap">
                             <img src="https://i.pinimg.com/1200x/79/cf/03/79cf03957738f293de2f7d5d0c1d2af3.jpg"
-                                 alt="B.A. Performing Arts at PKDAS University"
-                                 class="img-fluid w-100" style="min-height: 420px; object-fit: cover;">
+                                 alt="B.A. Performing Arts (Honours)">
                         </div>
                     </div>
                 </div>
@@ -2762,166 +2859,166 @@ img, video, iframe {
         </div>
     </section>
 
-    <section class="py-5 bg-light" id="highlights">
+    <section class="py-5 bg-light" id="differentiators">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(245, 130, 32, 0.15); color: #F58220; font-weight: 700; letter-spacing: 1px;">Core Pillars</span>
-                <h2 class="display-6 fw-bold" style="color: var(--primary);">Programme Highlights</h2>
+                <h2 class="display-6 fw-bold" style="color: var(--primary);">Key Differentiators of this program</h2>
                 <div class="mx-auto mt-2" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
-                <p class="text-muted mt-3 mb-0 mx-auto" style="max-width: 680px; font-size: 15px;">
-                    Curated to bridge traditional classical heritage with commercial entertainment, digital broadcasting, and creative entrepreneurship.
-                </p>
             </div>
 
-            <div class="row g-4">
+            <div class="row g-3 g-lg-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="highlight-card">
-                        <div class="highlight-icon-box"><i class="bi bi-translate"></i></div>
-                        <h5>Foundational &amp; Language Exploration</h5>
-                        <p>A broad variety of foundational and language courses to guide students in their initial exploration of the domain, fostering linguistic depth, cultural context, and aesthetic appreciation.</p>
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">01</div>
+                        <p>Interdisciplinary learning integrating theatre, dance, music, and performance studies.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
-                    <div class="highlight-card">
-                        <div class="highlight-icon-box"><i class="bi bi-megaphone-fill"></i></div>
-                        <h5>Branding, Social Media &amp; Mass Media</h5>
-                        <p>Impeccably structured Business, Social Media, and Mass Media courses to help artists build a sustainable personal brand, digital presence, and commercial reach for their art form.</p>
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">02</div>
+                        <p>Four-year Honours programme with research and specialization opportunities.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
-                    <div class="highlight-card">
-                        <div class="highlight-icon-box"><i class="bi bi-camera-reels-fill"></i></div>
-                        <h5>Mandated Live Stage Performances</h5>
-                        <p>Practical sessions and mandated live stage performances across advanced semesters giving students hands-on mastery in demonstrating their art form in front of real audiences.</p>
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">03</div>
+                        <p>Blend of traditional Indian arts and contemporary global practices.</p>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-6">
-                    <div class="highlight-card">
-                        <div class="highlight-icon-box"><i class="bi bi-building-check"></i></div>
-                        <h5>Internships at Locations of Repute</h5>
-                        <p>High-value internship opportunities at prestigious cultural institutions, production studios, media houses, and theatres to give students an in-depth understanding of industry workflows (Honours students only).</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">04</div>
+                        <p>Extensive hands-on training through performances, productions, and workshops.</p>
                     </div>
                 </div>
-
-                <div class="col-md-12 col-lg-6">
-                    <div class="highlight-card">
-                        <div class="highlight-icon-box"><i class="bi bi-diagram-3-fill"></i></div>
-                        <h5>Structured Major &amp; Allied Synergy</h5>
-                        <p>Well-structured Major and Allied courses spanning Music, Dance, and Theatre domains, empowering artists with dual-discipline competence, creative versatility, and specialized mastery.</p>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">05</div>
+                        <p>Regular interaction with industry experts and performing arts professionals.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">06</div>
+                        <p>Focus on creative entrepreneurship and arts management skills.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">07</div>
+                        <p>Integration of digital media and technology in performing arts.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">08</div>
+                        <p>Community engagement through cultural outreach and social impact projects.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">09</div>
+                        <p>Skill-based curriculum enhancing employability and leadership.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">10</div>
+                        <p>Professional portfolio development through projects, performances, and internships.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">11</div>
+                        <p>Career pathways across arts, media, entertainment, and education.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="differentiator-card">
+                        <div class="differentiator-num">12</div>
+                        <p>Emphasis on creativity, innovation, and research-driven artistic practice.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5" id="differentiators">
+    <section class="py-5" id="highlights">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(32, 38, 87, 0.1); color: var(--primary); font-weight: 700; letter-spacing: 1px;">Why This Programme Stands Apart</span>
-                <h2 class="display-6 fw-bold" style="color: var(--primary);">Key Differentiators</h2>
+                <h2 class="display-6 fw-bold" style="color: var(--primary);">Programme Highlights</h2>
                 <div class="mx-auto mt-2" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
-                <p class="text-muted mt-3 mb-0 mx-auto" style="max-width: 700px; font-size: 15px;">
-                    Twelve foundational attributes that make the B.A. Performing Arts (Honours) at PKDAS University an unmatched launchpad for artistic excellence.
-                </p>
             </div>
 
-            <div class="row g-3 g-lg-4">
+            <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">01 &bull; Interdisciplinary</div>
-                        <h5>Interdisciplinary Learning</h5>
-                        <p>Seamlessly integrates theatre, dance, music, stagecraft, and performance studies for holistic artistic mastery.</p>
+                    <div class="highlight-card">
+                        <div class="highlight-icon-box"><i class="bi bi-translate"></i></div>
+                        <p>Variety of foundational and language courses to guide the student in their initial exploration of the domain</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">02 &bull; Research Rigour</div>
-                        <h5>Four-Year Honours Model</h5>
-                        <p>Advanced 4-year degree structure featuring in-depth research, honours dissertations, and specialized electives.</p>
+                    <div class="highlight-card">
+                        <div class="highlight-icon-box"><i class="bi bi-megaphone-fill"></i></div>
+                        <p>Impeccably structured Business, Social Media and Mass Media courses to help the student build a brand for their art form</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">03 &bull; Global &amp; Classical</div>
-                        <h5>Tradition Meets Global Trends</h5>
-                        <p>Harmonious blend of time-honoured Indian classical arts traditions and cutting-edge global contemporary practices.</p>
+                    <div class="highlight-card">
+                        <div class="highlight-icon-box"><i class="bi bi-person-video3"></i></div>
+                        <p>Practical Sessions and Mandated Performances to give the student a feel for demonstrating their art form</p>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">04 &bull; Immersive Practice</div>
-                        <h5>Extensive Hands-on Training</h5>
-                        <p>Continuous practical training through mandated stage productions, studio masterclasses, and live performances.</p>
+                <div class="col-md-6 col-lg-6">
+                    <div class="highlight-card">
+                        <div class="highlight-icon-box"><i class="bi bi-building-check"></i></div>
+                        <p>Internship opportunities at locations of repute to give the student an in-depth understanding of the industry ( Honors Students only)</p>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">05 &bull; Mentorship</div>
-                        <h5>Industry Expert Interactions</h5>
-                        <p>Regular masterclasses, workshops, and direct artistic mentorship from renowned stage and cinema professionals.</p>
+                <div class="col-md-12 col-lg-6">
+                    <div class="highlight-card">
+                        <div class="highlight-icon-box"><i class="bi bi-diagram-3-fill"></i></div>
+                        <p>Well-structured Major and Allied courses in the domains of Music, Dance and Theatre</p>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">06 &bull; Enterprise</div>
-                        <h5>Creative Entrepreneurship</h5>
-                        <p>Sharp focus on arts management, festival curation, crowdfunding, and commercial enterprise leadership.</p>
+    <section class="py-5 bg-light" id="audience">
+        <div class="container py-4">
+            <div class="p-4 p-lg-5 bg-white rounded-4 border shadow-sm">
+                <h2 class="display-6 fw-bold mb-4" style="color: var(--primary);">Who should pursue this Program?</h2>
+                <p class="text-dark mb-3" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                    Devised with keeping the trends of the entertainment industry and the needs of an artist in mind, this course is built for those students who fully intend on pursuing a career in the entertainment industry. A career in performing arts usually begins as a hobby in the early formative years of a student&rsquo;s life.
+                </p>
+                <p class="text-dark mb-3" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                    This course aims at helping the students harness this early founded passion and convert it into a feasible and prosperous career. Presently, this course aims to help those students with a passion for the Music, Dance and Theatre domains. It aids in helping the student convert their unstructured hobbies into a structured form, presentable at an industry level.
+                </p>
+                <p class="text-dark mb-0" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                    This course is particularly designed to help the students achieve all-round development, not only in the field of performing arts but also in the understanding of languages and the necessary business acumen to build a successful career.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="placement-activities">
+        <div class="container py-4">
+            <div class="row g-4">
+                <div class="col-lg-6">
+                    <div class="p-4 p-lg-5 bg-light rounded-4 border h-100">
+                        <h2 class="h3 fw-bold mb-3" style="color: var(--primary);">Placement Opportunities &amp; Career Assistance</h2>
+                        <p class="text-dark mb-0" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                            The Placement Cell of the University will facilitate the placement of the graduating students in the Corporate World/ Academic Institutions / Healthcare Sector / Entertainment Industry, besides providing monetary assistance and ideation to the budding entrepreneurs to initiate start-ups through the NGI TBI.
+                        </p>
                     </div>
                 </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">07 &bull; Innovation</div>
-                        <h5>Digital Media &amp; Technology</h5>
-                        <p>Integration of sound recording, digital editing, stage lighting acoustics, and new media in performing arts.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">08 &bull; Outreach</div>
-                        <h5>Community Engagement</h5>
-                        <p>Meaningful cultural outreach, public performances, social awareness theatre, and impactful community projects.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">09 &bull; Employability</div>
-                        <h5>Skill-Based Leadership</h5>
-                        <p>Outcome-driven curriculum fostering stage confidence, public communication, teamwork, and managerial acumen.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">10 &bull; Showcase</div>
-                        <h5>Professional Portfolio Building</h5>
-                        <p>Graduates build curated performance showreels, stage credits, and published works to launch their careers.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">11 &bull; Diverse Pathways</div>
-                        <h5>Multidimensional Careers</h5>
-                        <p>Clear career pathways spanning stage, cinema, television, broadcasting, arts therapies, and academic faculties.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="differentiator-card">
-                        <div class="differentiator-num">12 &bull; Originality</div>
-                        <h5>Research-Driven Practice</h5>
-                        <p>Strong emphasis on original artistic expression, dramaturgy, performance aesthetics, and scholarly research.</p>
+                <div class="col-lg-6">
+                    <div class="p-4 p-lg-5 bg-light rounded-4 border h-100">
+                        <h2 class="h3 fw-bold mb-3" style="color: var(--primary);">Extra-Curricular/Co-Curricular Activities In The Program</h2>
+                        <p class="text-dark mb-0" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                            Presently, the department aims to motivate co-curricular activities in the form of Lab / Studio Sessions organized in addition to the theory coursework. The department also plans on a mandate of performances through the 6th, 7th &amp; 8th Semester to help students get a feel for the work that goes into a Live Performance, on-stage and behind the stage. Internships are proposed during the 7th Semester( Honors Students only) to further improve student insights in the entertainment industry domain. A capstone project is proposed during the 8th Semester for students to present their art form to a panel of esteemed academia in their respective domains (Honors Students only)
+                        </p>
                     </div>
                 </div>
             </div>
@@ -2931,39 +3028,27 @@ img, video, iframe {
     <section class="py-5 bg-light" id="specializations">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(245, 130, 32, 0.15); color: #F58220; font-weight: 700; letter-spacing: 1px;">Curriculum Design</span>
-                <h2 class="display-6 fw-bold" style="color: var(--primary);">Focus Areas &amp; Specialization Streams</h2>
-                <div class="mx-auto mt-2" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
-                <p class="text-muted mt-3 mb-0 mx-auto" style="max-width: 740px; font-size: 15px;">
-                    Students establish foundational breadth in their initial semesters, followed by in-depth concentration through Major &amp; Allied disciplines paired with industry-aligned electives.
+                <h2 class="display-6 fw-bold mb-3" style="color: var(--primary);">Who should pursue this Program?</h2>
+                <div class="mx-auto mb-3" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
+                <p class="text-dark mx-auto mb-0" style="max-width: 900px; font-size: 15.5px; line-height: 1.8;">
+                    The course currently aims on focusing on the Music, Dance and Theatre Domains. In order to accomplish this, students will pursue foundational courses in their initial semesters to achieve breadth in the domain. Followed by this, students will pursue Major Areas and Allied areas in the domains of music, dance and theatre. The proposed set of major and Allied courses is as mentioned below.
                 </p>
             </div>
 
             <div class="row g-4">
                 <div class="col-lg-4">
                     <div class="stream-card">
-                        <div class="stream-header music">
-                            <span class="badge bg-light text-primary mb-2 small fw-bold">Domain 01</span>
-                            <h4>Music (Vocal &amp; Instrumental)</h4>
-                            <p>Carnatic &amp; Hindustani classical mastery with sound engineering</p>
+                        <div class="stream-header">
+                            <h4 class="mb-0 fw-bold">Music (Plans)</h4>
                         </div>
                         <div class="stream-body">
                             <div class="stream-plan-box">
-                                <h6>Plan A: Carnatic Music</h6>
-                                <p><strong>Major:</strong> Carnatic Vocal / Violin / Mridangam</p>
-                                <p><strong>Allied Area:</strong> Classical Dance / Theatre</p>
+                                <h6>Major Area &ndash; Carnatic Vocal / Violin/ Mridangam</h6>
+                                <p>Allied Area &ndash; Dance / Theatre</p>
                             </div>
-                            <div class="stream-plan-box">
-                                <h6>Plan B: Hindustani Music</h6>
-                                <p><strong>Major:</strong> Hindustani Vocal / Instrument</p>
-                                <p><strong>Allied Area:</strong> Classical Dance / Theatre</p>
-                            </div>
-                            <div class="mt-3">
-                                <span class="d-block text-dark fw-bold small mb-2"><i class="bi bi-sliders me-1 text-primary"></i> Subplans for Electives in Music:</span>
-                                <div class="electives-badge-group">
-                                    <span class="electives-badge">Music, Science &amp; Technology</span>
-                                    <span class="electives-badge">Sound Recording &amp; Editing</span>
-                                </div>
+                            <div class="stream-plan-box mb-0">
+                                <h6>Major Area &ndash; Hindustani Vocal / Instrument</h6>
+                                <p>Allied Area &ndash; Dance / Theatre</p>
                             </div>
                         </div>
                     </div>
@@ -2971,29 +3056,17 @@ img, video, iframe {
 
                 <div class="col-lg-4">
                     <div class="stream-card">
-                        <div class="stream-header dance">
-                            <span class="badge bg-light text-primary mb-2 small fw-bold">Domain 02</span>
-                            <h4>Dance (Classical &amp; Contemporary)</h4>
-                            <p>Bharathanatyam &amp; Kathak repertoire with choreography</p>
+                        <div class="stream-header">
+                            <h4 class="mb-0 fw-bold">Dance (Plans)</h4>
                         </div>
                         <div class="stream-body">
                             <div class="stream-plan-box">
-                                <h6>Plan A: Bharathanatyam</h6>
-                                <p><strong>Major:</strong> Bharathanatyam</p>
-                                <p><strong>Allied Area:</strong> Classical Music / Theatre</p>
+                                <h6>Major Area &ndash; Bharathanatyam</h6>
+                                <p>Allied Area &ndash; Music / Theatre</p>
                             </div>
-                            <div class="stream-plan-box">
-                                <h6>Plan B: Kathak</h6>
-                                <p><strong>Major:</strong> Kathak</p>
-                                <p><strong>Allied Area:</strong> Classical Music / Theatre</p>
-                            </div>
-                            <div class="mt-3">
-                                <span class="d-block text-dark fw-bold small mb-2"><i class="bi bi-sliders me-1 text-primary"></i> Subplans for Electives in Dance:</span>
-                                <div class="electives-badge-group">
-                                    <span class="electives-badge">Choreography</span>
-                                    <span class="electives-badge">Music, Science &amp; Technology</span>
-                                    <span class="electives-badge">Sound Recording &amp; Editing</span>
-                                </div>
+                            <div class="stream-plan-box mb-0">
+                                <h6>Major Area &ndash; Kathak</h6>
+                                <p>Allied Area &ndash; Music / Theatre</p>
                             </div>
                         </div>
                     </div>
@@ -3001,29 +3074,13 @@ img, video, iframe {
 
                 <div class="col-lg-4">
                     <div class="stream-card">
-                        <div class="stream-header theatre">
-                            <span class="badge bg-light text-primary mb-2 small fw-bold">Domain 03</span>
-                            <h4>Theatre &amp; Dramatic Arts</h4>
-                            <p>Stage performance, direction, dramaturgy &amp; scenic design</p>
+                        <div class="stream-header">
+                            <h4 class="mb-0 fw-bold">Theatre (Plans)</h4>
                         </div>
                         <div class="stream-body">
-                            <div class="stream-plan-box">
-                                <h6>Plan A: Theatre Arts</h6>
-                                <p><strong>Major:</strong> Theatre Performance &amp; Direction</p>
-                                <p><strong>Allied Area:</strong> Classical Dance / Music</p>
-                            </div>
-                            <div class="stream-plan-box">
-                                <h6>Stagecraft Integration</h6>
-                                <p><strong>Core Focus:</strong> Acting, Lighting, Sound &amp; Production</p>
-                                <p><strong>Allied Area:</strong> Live Production Management</p>
-                            </div>
-                            <div class="mt-3">
-                                <span class="d-block text-dark fw-bold small mb-2"><i class="bi bi-sliders me-1 text-primary"></i> Subplans for Electives in Theatre:</span>
-                                <div class="electives-badge-group">
-                                    <span class="electives-badge">Design for Theatre</span>
-                                    <span class="electives-badge">Music, Science &amp; Technology</span>
-                                    <span class="electives-badge">Sound Recording &amp; Editing</span>
-                                </div>
+                            <div class="stream-plan-box mb-0">
+                                <h6>Major Area &ndash; Theatre</h6>
+                                <p>Allied Area &ndash; Dance / Music</p>
                             </div>
                         </div>
                     </div>
@@ -3035,232 +3092,158 @@ img, video, iframe {
     <section class="py-5" id="pedagogy">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(32, 38, 87, 0.1); color: var(--primary); font-weight: 700; letter-spacing: 1px;">Teaching Methodology</span>
-                <h2 class="display-6 fw-bold" style="color: var(--primary);">Pedagogy &amp; Practical Training</h2>
+                <h2 class="display-6 fw-bold" style="color: var(--primary);">Program Design &amp; Delivery Method</h2>
                 <div class="mx-auto mt-2" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
-                <p class="text-muted mt-3 mb-0 mx-auto" style="max-width: 680px; font-size: 15px;">
-                    A dynamic delivery model combining academic theory with studio practice, stage recitals, capstone projects, and industry immersion.
+            </div>
+
+            <div class="mb-5">
+                <h3 class="h4 fw-bold mb-3" style="color: var(--primary);">Focus Areas / Key Subjects (Specialization wise)</h3>
+                <p class="text-dark mb-4" style="font-size: 15.5px; line-height: 1.8;">
+                    The focus areas and key subjects are from the domains of Music, Dance and Theatre courses. All of these courses have a Major and an Allied area for students to pursue in-depth knowledge in a specific art form. Additionally, students have a wide variety of electives to choose from as mentioned below.
                 </p>
-            </div>
 
-            <div class="row g-4">
-                <div class="col-md-6 col-lg-3">
-                    <div class="pedagogy-step-card">
-                        <div class="pedagogy-badge">01</div>
-                        <h5>Classroom Teaching</h5>
-                        <p>Rigorous intellectual grounding in performing arts history, aesthetics, Natyashastra principles, dramaturgy, and world artistic traditions.</p>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="p-4 bg-light rounded-4 border h-100">
+                            <h5 class="fw-bold mb-3" style="color: var(--primary);">Subplans for Electives in Music:</h5>
+                            <ul class="mb-0 text-dark" style="line-height: 1.9;">
+                                <li>Music, Science &amp; Technology</li>
+                                <li>Sound Recording &amp; Editing</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="pedagogy-step-card">
-                        <div class="pedagogy-badge">02</div>
-                        <h5>Studio Practical Training</h5>
-                        <p>Specialized practical training in acoustically treated sound studios, dance practice halls, and black-box acting spaces with one-on-one guru mentorship.</p>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-light rounded-4 border h-100">
+                            <h5 class="fw-bold mb-3" style="color: var(--primary);">Subplans for Electives in Dance:</h5>
+                            <ul class="mb-0 text-dark" style="line-height: 1.9;">
+                                <li>Choreography</li>
+                                <li>Music, Science &amp; Technology</li>
+                                <li>Sound Recording &amp; Editing</li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="pedagogy-step-card">
-                        <div class="pedagogy-badge">03</div>
-                        <h5>Instructional Stage Recitals</h5>
-                        <p>Instructional learning through mandated performances across the 6th, 7th &amp; 8th semesters, experiencing all aspects of live stagecraft.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-3">
-                    <div class="pedagogy-step-card">
-                        <div class="pedagogy-badge">04</div>
-                        <h5>Project-Based &amp; Capstone</h5>
-                        <p>Hands-on industry internships in the 7th semester followed by a milestone 8th-semester Capstone project presented before an esteemed academic jury.</p>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-light rounded-4 border h-100">
+                            <h5 class="fw-bold mb-3" style="color: var(--primary);">Subplans for Electives in Theatre:</h5>
+                            <ul class="mb-0 text-dark" style="line-height: 1.9;">
+                                <li>Design for Theatre</li>
+                                <li>Music, Science &amp; Technology</li>
+                                <li>Sound Recording &amp; Editing</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="mt-5 p-4 rounded-4" style="background: linear-gradient(135deg, rgba(32, 38, 87, 0.04) 0%, rgba(245, 130, 32, 0.06) 100%); border: 1px dashed rgba(245, 130, 32, 0.4);">
-                <div class="row align-items-center g-3">
-                    <div class="col-lg-3 text-center text-lg-start">
-                        <span class="badge px-3 py-2 text-white mb-2" style="background: #F58220; font-size: 12px;">Live Performance Roadmap</span>
-                        <h5 class="fw-bold mb-0" style="color: var(--primary);">On-Stage &amp; Backstage</h5>
+            <div>
+                <h3 class="h4 fw-bold mb-4" style="color: var(--primary);">Pedagogy Method</h3>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pedagogy-step-card">
+                            <div class="pedagogy-badge"><i class="bi bi-easel"></i></div>
+                            <h5 class="fw-bold mb-0" style="color: var(--primary);">Classroom Teaching</h5>
+                        </div>
                     </div>
-                    <div class="col-lg-3 border-start-lg ps-lg-4">
-                        <strong class="text-dark d-block">Semesters 1 to 5:</strong>
-                        <small class="text-muted">Studio Lab sessions organized in tandem with core theory coursework.</small>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pedagogy-step-card">
+                            <div class="pedagogy-badge"><i class="bi bi-soundwave"></i></div>
+                            <h5 class="fw-bold mb-0" style="color: var(--primary);">Specialized Practical Training in Studios</h5>
+                        </div>
                     </div>
-                    <div class="col-lg-3 border-start-lg ps-lg-4">
-                        <strong class="text-dark d-block">Semesters 6, 7 &amp; 8:</strong>
-                        <small class="text-muted">Mandated live performances experiencing lighting, stage design, sound &amp; performance.</small>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pedagogy-step-card">
+                            <div class="pedagogy-badge"><i class="bi bi-stars"></i></div>
+                            <h5 class="fw-bold mb-0" style="color: var(--primary);">Instructional Learning through Performances</h5>
+                        </div>
                     </div>
-                    <div class="col-lg-3 border-start-lg ps-lg-4">
-                        <strong class="text-dark d-block">Semester 7 &amp; 8 (Honours):</strong>
-                        <small class="text-muted">Industry internship + 8th-semester capstone presentation before domain experts.</small>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="pedagogy-step-card">
+                            <div class="pedagogy-badge"><i class="bi bi-kanban"></i></div>
+                            <h5 class="fw-bold mb-0" style="color: var(--primary);">Project Based Learning</h5>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-light" id="audience">
-        <div class="container py-4">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6">
-                    <span class="section-title">Target Audience</span>
-                    <h2 class="display-6 fw-bold mt-2 mb-4" style="color: var(--primary);">Who Should Pursue This Programme?</h2>
-
-                    <p class="text-dark mb-3" style="text-align: justify; font-size: 15px; line-height: 1.75;">
-                        Devised by keeping the emerging trends of the entertainment industry and the evolving needs of an artist in mind, this course is tailored for students who <strong>fully intend on pursuing a successful, prosperous career in the entertainment and creative arts sector</strong>.
-                    </p>
-
-                    <p class="text-dark mb-4" style="text-align: justify; font-size: 15px; line-height: 1.75;">
-                        A career in performing arts usually begins as a personal hobby in the formative years of a student’s life. This course aims at helping students <strong>harness this early-founded passion and convert it into a structured, commercially viable, and respected profession</strong>.
-                    </p>
-
-                    <div class="d-flex flex-column gap-3">
-                        <div class="d-flex align-items-start gap-3 p-3 bg-white border rounded-3 shadow-sm">
-                            <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(245, 130, 32, 0.15); color: #F58220; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px;">
-                                <i class="bi bi-stars"></i>
-                            </div>
-                            <div>
-                                <strong class="d-block text-dark" style="font-size: 14px;">Turning Hobbies into Professional Artistry</strong>
-                                <small class="text-muted">Transform unstructured musical, dance, or dramatic talents into polished, industry-presentable artistry.</small>
-                            </div>
-                        </div>
-
-                        <div class="d-flex align-items-start gap-3 p-3 bg-white border rounded-3 shadow-sm">
-                            <div style="width: 36px; height: 36px; border-radius: 8px; background: rgba(32, 38, 87, 0.1); color: var(--primary); display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px;">
-                                <i class="bi bi-briefcase-fill"></i>
-                            </div>
-                            <div>
-                                <strong class="d-block text-dark" style="font-size: 14px;">All-Round Business &amp; Media Acumen</strong>
-                                <small class="text-muted">Achieve comprehensive growth in languages, media branding, public relations, and managerial acumen.</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6">
-                    <div class="p-4 p-lg-5 rounded-4 text-white shadow-lg position-relative overflow-hidden"
-                         style="background: linear-gradient(135deg, var(--primary) 0%, #161b42 60%, #4c1d95 100%);">
-                        <div class="position-absolute top-0 end-0 p-4 opacity-10">
-                            <i class="bi bi-music-player-fill" style="font-size: 180px;"></i>
-                        </div>
-                        <span class="badge px-3 py-2 text-dark mb-3 fw-bold" style="background:#F58220;">Artist Development Pathway</span>
-                        <h3 class="fw-bold mb-3">From Passion to Profession</h3>
-                        <p class="text-white-50 mb-4" style="line-height: 1.7; font-size: 15px;">
-                            Whether your passion lies in Carnatic vocal resonance, Hindustani classical ragas, the graceful mudras of Bharathanatyam and Kathak, or the dramatic commanding presence of theatre — our faculty and state-of-the-art facilities turn your creative dreams into a thriving lifelong career.
-                        </p>
-                        <a href="https://applynow.pkdasuniversity.net/application-form" target="_blank" rel="noopener noreferrer"
-                           class="btn btn-warning rounded-pill px-4 py-2 fw-semibold text-dark shadow">
-                            Start Your Journey <i class="bi bi-arrow-right ms-1"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5" id="careers">
+    <section class="py-5 bg-light" id="careers">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(32, 38, 87, 0.1); color: var(--primary); font-weight: 700; letter-spacing: 1px;">Industry Horizons</span>
-                <h2 class="display-6 fw-bold" style="color: var(--primary);">Career Opportunities &amp; Placement Ecosystem</h2>
+                <h2 class="display-6 fw-bold" style="color: var(--primary);">Future Career Prospects after completing the Program</h2>
                 <div class="mx-auto mt-2" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
-                <p class="text-muted mt-3 mb-0 mx-auto" style="max-width: 720px; font-size: 15px;">
-                    Graduates step into prominent roles across mainstream cinema, television, theatre repertories, creative wellness, broadcasting, and academic faculties.
-                </p>
-            </div>
-
-            <div class="tbi-feature-box mb-5">
-                <div class="row align-items-center g-4">
-                    <div class="col-lg-8">
-                        <div class="d-flex align-items-center gap-2 mb-2">
-                            <span class="badge rounded-pill text-white px-3 py-1" style="background: #F58220; font-size: 11px;">CAREER EMPOWERMENT</span>
-                            <span class="text-primary fw-bold small">NGI TBI &amp; University Placement Cell</span>
-                        </div>
-                        <h4 class="fw-bold mb-2" style="color: var(--primary);">Placement Support &amp; Creative Startup Incubation</h4>
-                        <p class="text-muted mb-0" style="font-size: 14.5px; line-height: 1.65;">
-                            The University Placement Cell facilitates direct placement of graduating students across <strong>Corporate Media Houses, Academic Institutions, Healthcare Organizations, and the Global Entertainment Industry</strong>. Additionally, budding creative entrepreneurs receive ideation support and monetary incubation assistance to launch performing arts studios and production companies through the <strong>NGI TBI (Technology Business Incubator)</strong>.
-                        </p>
-                    </div>
-                    <div class="col-lg-4 text-lg-end">
-                        <a href="https://pkdasuniversity.ac.in/contacts" target="_blank" class="btn text-white px-4 py-2 rounded-pill fw-semibold shadow-sm"
-                           style="background: var(--primary); font-size: 14px;">
-                            <i class="bi bi-briefcase me-1 text-warning"></i> Explore Placement Cell
-                        </a>
-                    </div>
-                </div>
             </div>
 
             <div class="row g-4">
-                <div class="col-md-6 col-lg-4">
-                    <div class="career-role-card">
-                        <div class="career-role-icon"><i class="bi bi-camera-video-fill"></i></div>
-                        <h5>Actor (Screen &amp; Stage)</h5>
-                        <p>Actors dominate screens, big and small, all over the world. With the prowess to demonstrate emotion on demand along with interdisciplinary arts mastery, an acting career yields immense commercial acclaim and enduring social prominence.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="career-role-card">
-                        <div class="career-role-icon"><i class="bi bi-person-walking"></i></div>
-                        <h5>Professional Dancer &amp; Performer</h5>
-                        <p>Dancers use their mastery of musical rhythms to bring poetic expression to life. Renowned in cinema, theatrical dance dramas, and international festivals, professional dancers are sought after for global cultural tours and recitals.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="career-role-card">
-                        <div class="career-role-icon"><i class="bi bi-mic-fill"></i></div>
-                        <h5>Musical Theatre Performer</h5>
-                        <p>Tri-discipline artists blending singing, dancing, and dramatic acting to bring grand musical theatre productions to life. With the worldwide boom in musical theatre audiences, performers command high artistic and commercial prestige.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="career-role-card">
-                        <div class="career-role-icon"><i class="bi bi-heart-pulse-fill"></i></div>
-                        <h5>Dance, Music &amp; Drama Therapist</h5>
-                        <p>Specialized clinical creative therapists utilizing music, dance movements, and drama therapy to help healthcare and rehabilitation patients express emotions, heal psychological trauma, and enhance mental well-being.</p>
-                    </div>
-                </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="career-role-card">
                         <div class="career-role-icon"><i class="bi bi-film"></i></div>
-                        <h5>Theatre &amp; Stage Director</h5>
-                        <p>Creative directors responsible for envisioning theatrical masterpieces, coaching actors, interpreting scripts, orchestrating lighting and sound design, and overseeing comprehensive production logistics.</p>
+                        <h5>Actor</h5>
+                        <p>Actors dominate screens, big and small, all over the world. With the prowess to demonstrate emotion on demand along with a demonstration of inter-disciplinary arts, being an Actor, not only helps the student gain commercial success, but also Social success</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="career-role-card">
-                        <div class="career-role-icon"><i class="bi bi-pen-fill"></i></div>
-                        <h5>Screenwriter &amp; Playwright</h5>
-                        <p>Visionary writers crafting movie scripts, teleplays, dialogues, and theatrical texts from scratch. Screenwriters breathe life into memorable characters and lay the literary foundation for blockbuster cinema and streaming series.</p>
+                        <div class="career-role-icon"><i class="bi bi-person-arms-up"></i></div>
+                        <h5>Dancer</h5>
+                        <p>Dancers use their ability to understand the flow of music to bring to life words strung to a tune. Not only do they perform in the Cinema and Theatre world, but dancers are renowned worldwide for their talent and are often invited to perform at a variety of cultural festivals.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="career-role-card">
-                        <div class="career-role-icon"><i class="bi bi-kanban-fill"></i></div>
-                        <h5>Arts Administrator &amp; Curator</h5>
-                        <p>Arts administrators plan, finance, organize, and market cultural events, festivals, art services, and exhibitions across major national theatres, heritage museums, cultural trusts, and international arts organizations.</p>
+                        <div class="career-role-icon"><i class="bi bi-music-note-list"></i></div>
+                        <h5>Musical Theatre Performer</h5>
+                        <p>Being an Actor or a Dancer is an either-or situation for everyone but Musical Theatre Performers. They bring to life a different form of theatre driven by the ability to Sing, Dance and Act. In recent years, there has been a visible boom in the audience of the Musical Theatre domain.</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="career-role-card">
-                        <div class="career-role-icon"><i class="bi bi-gear-fill"></i></div>
+                        <div class="career-role-icon"><i class="bi bi-heart-pulse"></i></div>
+                        <h5>Dance, Music, Drama-Therapists</h5>
+                        <p>Like Speech Therapists, these therapists use a variety of art forms to help their patients to express themselves. Due to repressive tendencies, certain patients can only express themselves in non-conventional means.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="career-role-card">
+                        <div class="career-role-icon"><i class="bi bi-megaphone"></i></div>
+                        <h5>Theatre Director</h5>
+                        <p>A theatre director is responsible for pulling together a brilliant theatrical performance. Not only are they responsible for critiquing actors and building the play, but are also responsible for the logistics and planning of the whole event.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="career-role-card">
+                        <div class="career-role-icon"><i class="bi bi-pencil-square"></i></div>
+                        <h5>Screenwriter</h5>
+                        <p>We often watch Movies and are left awe-struck with the direction and growth of the movie. Most, if not all, of this credit, is due to the team of Screenwriters who build movies from scratch and help breathe life into all of the characters</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="career-role-card">
+                        <div class="career-role-icon"><i class="bi bi-building-gear"></i></div>
+                        <h5>Arts Administrator</h5>
+                        <p>Arts administrators organize art activities and services and ensure they are successful. They work for various organizations such as theatres or museums.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="career-role-card">
+                        <div class="career-role-icon"><i class="bi bi-sliders"></i></div>
                         <h5>Theatre Stage Manager</h5>
-                        <p>Key logistical and technical leaders who ensure live stage shows run flawlessly. Stage managers coordinate backstage crew, actor cues, props, set transitions, and technical execution through stellar interpersonal and networking skills.</p>
+                        <p>Another performing arts career that requires organization skills is that of a theatre stage manager, in charge of making sure shows run smoothly. A manager requires great people skills and the ability to network to run the show. and many more</p>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-lg-4">
                     <div class="career-role-card">
                         <div class="career-role-icon"><i class="bi bi-mortarboard"></i></div>
-                        <h5>Performing Arts Facilitator &amp; Educator</h5>
-                        <p>Inspiring educators and artistic mentors working within premier universities, colleges, international schools, and fine arts academies, guiding the next generation of creative performers and cultural scholars.</p>
+                        <h5>Performing Arts Facilitator</h5>
+                        <p>Performing Artist can be part of the educational institutions as facilitator.</p>
                     </div>
                 </div>
             </div>
@@ -3405,7 +3388,7 @@ img, video, iframe {
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script>
         var s = document.createElement("script");
         s.type = "text/javascript";

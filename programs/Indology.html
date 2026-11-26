@@ -2363,6 +2363,104 @@ img, video, iframe {
             flex-shrink: 0;
         }
 
+    
+        .overview-image-wrap {
+            width: 100%;
+            height: 420px;
+            min-height: 320px;
+            max-height: 420px;
+            overflow: hidden;
+        }
+        .overview-image-wrap img {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            max-height: 420px;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        @media (max-width: 767.98px) {
+            .overview-image-wrap {
+                height: 320px;
+                min-height: 260px;
+                max-height: 320px;
+            }
+            .overview-image-wrap img {
+                min-height: 260px;
+                max-height: 320px;
+            }
+        }
+
+    
+        /* === UNIFIED HERO & TYPOGRAPHY STANDARD === */
+        :root {
+            --primary: #202657;
+            --secondary: #F58220;
+            --nav-primary: #202657;
+            --nav-secondary: #F58220;
+            --nav-white: #FFFFFF;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15.5px;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        .program-hero {
+            position: relative;
+            padding: 130px 0 90px !important;
+            min-height: 390px;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .program-hero h1 {
+            color: #ffffff;
+            font-size: clamp(2rem, 3.4vw, 2.85rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.2 !important;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            margin-bottom: 12px;
+        }
+        .program-hero p {
+            line-height: 1.7;
+        }
+        .contemporary-navbar.scrolled {
+            background: #FFFFFF !important;
+            background: var(--nav-white) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        }
+        @media (max-width: 991.98px) {
+            .program-hero {
+                padding: 112px 0 72px !important;
+                min-height: 320px;
+                background-attachment: scroll !important;
+            }
+            .program-hero h1 {
+                font-size: 2.1rem !important;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .program-hero {
+                padding: 98px 0 58px !important;
+                min-height: auto;
+            }
+            .program-hero h1 {
+                font-size: 1.72rem !important;
+                line-height: 1.25 !important;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .program-hero {
+                padding: 90px 0 50px !important;
+            }
+            .program-hero h1 {
+                font-size: 1.5rem !important;
+            }
+        }
+        /* === END UNIFIED STANDARD === */
     </style>
 </head>
 
@@ -2643,46 +2741,23 @@ img, video, iframe {
 
     <section class="py-5 mt-4" id="overview">
         <div class="container py-4">
-            <div class="row align-items-center g-5">
+            <div class="row align-items-start g-5">
 
                 <div class="col-lg-7">
-                    <span class="section-title">Indology</span>
-                    <h2 class="display-6 fw-bold mt-2 mb-4" style="color: var(--primary);">B. Sc. Indology</h2>
+                    <h2 class="display-6 fw-bold mb-4" style="color: var(--primary);">Indology</h2>
 
-                    <div class="overview-box mt-3">
-                        <p class="text-dark mb-3" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
-                            B. Sc. Indology is a unique interdisciplinary course that delves deep into the study of Indian civilization, languages, literature, philosophy, art, and culture. It offers a comprehensive understanding of India’s ancient texts, archaeological heritage, spiritual traditions, and socio-political evolution.
-                        </p>
-                        <p class="text-dark mb-3" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
-                            This programme combines classical knowledge with modern research methodologies, enabling students to critically engage with India’s vast and diverse cultural legacy. The course is ideal for those interested in heritage conservation, cultural tourism, academia, and historical research.
-                        </p>
+                    <div class="overview-box">
                         <p class="mb-0 text-dark" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
-                            Field visits, language training (Sanskrit, Pali, Prakrit), and project work form an integral part of the curriculum, fostering analytical and interpretive skills..
+                            B. Sc. Indology is a unique interdisciplinary course that delves deep into the study of Indian civilization, languages, literature, philosophy, art, and culture. It offers a comprehensive understanding of India&rsquo;s ancient texts, archaeological heritage, spiritual traditions, and socio-political evolution. This programme combines classical knowledge with modern research methodologies, enabling students to critically engage with India&rsquo;s vast and diverse cultural legacy. The course is ideal for those interested in heritage conservation, cultural tourism, academia, and historical research. Field visits, language training (Sanskrit, Pali, Prakrit), and project work form an integral part of the curriculum, fostering analytical and interpretive skills..
                         </p>
-                    </div>
-
-                    <div class="d-flex flex-wrap gap-3 mt-4">
-                        <div class="d-flex align-items-center gap-2 px-3 py-2 bg-light border rounded-pill small fw-semibold text-dark">
-                            <i class="bi bi-translate text-primary"></i> Sanskrit, Pali &amp; Prakrit
-                        </div>
-                        <div class="d-flex align-items-center gap-2 px-3 py-2 bg-light border rounded-pill small fw-semibold text-dark">
-                            <i class="bi bi-geo-alt-fill text-primary"></i> Field Visits &amp; Project Work
-                        </div>
-                        <div class="d-flex align-items-center gap-2 px-3 py-2 bg-light border rounded-pill small fw-semibold text-dark">
-                            <i class="bi bi-shield-check text-primary"></i> Heritage Conservation
-                        </div>
                     </div>
                 </div>
 
                 <div class="col-lg-5">
                     <div class="position-relative">
-                        <div class="rounded-4 overflow-hidden shadow-lg border">
+                        <div class="rounded-4 overflow-hidden shadow-lg border overview-image-wrap">
                             <img src="https://i.pinimg.com/1200x/a7/c1/c1/a7c1c16e174109436a2941212f6c9145.jpg"
-                                 alt="B.Sc. Indology at PKDAS University"
-                                 class="img-fluid w-100" style="min-height: 420px; object-fit: cover;">
-                        </div>
-                        <div class="position-absolute bottom-0 start-0 w-100 p-3 text-white rounded-bottom-4"
-                             style="background: linear-gradient(180deg, transparent 0%, rgba(16, 20, 56, 0.95) 100%);">
+                                 alt="B.Sc. Indology">
                         </div>
                     </div>
                 </div>
@@ -2694,7 +2769,6 @@ img, video, iframe {
     <section class="py-5 bg-light" id="differentiators">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(32, 38, 87, 0.1); color: var(--primary); font-weight: 700; letter-spacing: 1px;">Core Strengths</span>
                 <h2 class="display-6 fw-bold" style="color: var(--primary);">Key Differentiators of this program</h2>
                 <div class="mx-auto mt-2" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
             </div>
@@ -2706,98 +2780,84 @@ img, video, iframe {
                         <p>Comprehensive study of India's civilization, culture, philosophy, literature, and heritage.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">02</div>
                         <p>Interdisciplinary curriculum integrating history, archaeology, linguistics, religion, and art.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">03</div>
                         <p>Training in classical languages such as Sanskrit, Pali, and Prakrit.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">04</div>
                         <p>Blend of traditional Indian knowledge systems with modern research methodologies.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">05</div>
                         <p>Hands-on learning through heritage walks, archaeological site visits, and museum studies.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">06</div>
                         <p>Exposure to manuscripts, inscriptions, epigraphy, and archival research.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">07</div>
                         <p>Four-year Honours programme with research and specialization opportunities.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">08</div>
                         <p>Focus on Indian Knowledge Systems (IKS) aligned with contemporary academic needs.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">09</div>
                         <p>Opportunities for fieldwork, cultural documentation, and heritage conservation projects.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">10</div>
                         <p>Development of analytical, interpretive, and critical thinking skills.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">11</div>
                         <p>Career pathways in heritage management, tourism, museums, research, and academia.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">12</div>
                         <p>Strong emphasis on preserving and promoting India's cultural and intellectual legacy.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">13</div>
                         <p>Integration of digital humanities, cultural mapping, and heritage technologies.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">14</div>
                         <p>Industry and institutional collaborations with museums, archives, and cultural organizations.</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="differentiator-card">
                         <div class="differentiator-num">15</div>
@@ -2811,7 +2871,6 @@ img, video, iframe {
     <section class="py-5" id="highlights">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(245, 130, 32, 0.15); color: #F58220; font-weight: 700; letter-spacing: 1px;">Key Pillars</span>
                 <h2 class="display-6 fw-bold" style="color: var(--primary);">Programme Highlights</h2>
                 <div class="mx-auto mt-2" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
             </div>
@@ -2820,39 +2879,30 @@ img, video, iframe {
                 <div class="col-md-6 col-lg-4">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-translate"></i></div>
-                        <h5>Foundational &amp; Language Courses</h5>
                         <p>Variety of foundational and language courses to guide the student in their initial exploration of the domain</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-megaphone-fill"></i></div>
-                        <h5>Business &amp; Mass Media</h5>
                         <p>Impeccably structured Business, Social Media and Mass Media courses to help the student build a brand for their art form</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-person-video3"></i></div>
-                        <h5>Practical Sessions &amp; Performances</h5>
                         <p>Practical Sessions and Mandated Performances to give the student a feel for demonstrating their art form</p>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-6">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-building-check"></i></div>
-                        <h5>Internship Opportunities</h5>
                         <p>Internship opportunities at locations of repute to give the student an in-depth understanding of the industry ( Honors Students only)</p>
                     </div>
                 </div>
-
                 <div class="col-md-12 col-lg-6">
                     <div class="highlight-card">
                         <div class="highlight-icon-box"><i class="bi bi-diagram-3-fill"></i></div>
-                        <h5>Major &amp; Allied Courses</h5>
                         <p>Well-structured Major and Allied courses in the domains of Music, Dance and Theatre</p>
                     </div>
                 </div>
@@ -2862,58 +2912,47 @@ img, video, iframe {
 
     <section class="py-5 bg-light" id="audience">
         <div class="container py-4">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-7">
-                    <span class="section-title">Eligibility &amp; Suitability</span>
-                    <h2 class="display-6 fw-bold mt-2 mb-4" style="color: var(--primary);">Who should pursue this Program?</h2>
+            <div class="p-4 p-lg-5 bg-white rounded-4 border shadow-sm">
+                <h2 class="display-6 fw-bold mb-4" style="color: var(--primary);">Who should pursue this Program?</h2>
 
-                    <p class="text-dark mb-4" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
-                        The B.Sc. Indology programme is designed for students who are passionate about understanding India's rich cultural, intellectual, and civilizational heritage, and who wish to pursue academic, research, or professional careers in related fields. This programme is ideal for:
-                    </p>
+                <p class="text-dark mb-4" style="text-align: justify; font-size: 15.5px; line-height: 1.8;">
+                    The B.Sc. Indology programme is designed for students who are passionate about understanding India's rich cultural, intellectual, and civilizational heritage. It is particularly suitable for learners who wish to explore the intersections of history, philosophy, languages, literature, archaeology, religion, art, and culture through a multidisciplinary perspective.
+                </p>
 
-                    <div class="d-flex flex-column gap-3">
-                        <div class="audience-item">
+                <h5 class="fw-bold mb-3" style="color: var(--primary);">This programme is ideal for:</h5>
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="audience-item h-100">
                             <div class="audience-icon"><i class="bi bi-check2-circle"></i></div>
                             <div class="text-dark fw-semibold" style="font-size: 14.5px;">
-                                Students interested in ancient Indian history, philosophy, languages, archaeology, and cultural studies.
-                            </div>
-                        </div>
-
-                        <div class="audience-item">
-                            <div class="audience-icon"><i class="bi bi-check2-circle"></i></div>
-                            <div class="text-dark fw-semibold" style="font-size: 14.5px;">
-                                Aspirants aiming for careers in heritage management, museum curation, tourism, archives, and cultural preservation.
-                            </div>
-                        </div>
-
-                        <div class="audience-item">
-                            <div class="audience-icon"><i class="bi bi-check2-circle"></i></div>
-                            <div class="text-dark fw-semibold" style="font-size: 14.5px;">
-                                Individuals seeking preparation for civil services, public policy, academic research, and higher education in humanities and social sciences.
-                            </div>
-                        </div>
-
-                        <div class="audience-item">
-                            <div class="audience-icon"><i class="bi bi-check2-circle"></i></div>
-                            <div class="text-dark fw-semibold" style="font-size: 14.5px;">
-                                Creative minds looking to bridge traditional Indian knowledge systems with modern media, publishing, content creation, and cultural diplomacy.
+                                Students interested in Indian history, culture, heritage, and traditions.
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-lg-5">
-                    <div class="p-4 p-lg-5 rounded-4 text-white shadow-lg position-relative overflow-hidden"
-                         style="background: linear-gradient(135deg, var(--primary) 0%, #15193d 50%, #9a3412 100%);">
-                        <span class="badge px-3 py-2 text-dark mb-3 fw-bold" style="background:#F58220;">B.Sc. Indology</span>
-                        <p class="fw-bold mb-3 text-white">Explore Indian Civilization</p>
-                        <p class="text-white-50 mb-4" style="line-height: 1.7; font-size: 15px;">
-                            Delve deep into Indian civilization, ancient texts, classical languages, and traditional wisdom with modern research methodologies.
-                        </p>
-                        <a href="https://applynow.pkdasuniversity.net/application-form" target="_blank" rel="noopener noreferrer"
-                           class="btn btn-warning rounded-pill px-4 py-2 fw-semibold text-dark shadow">
-                            Apply Online <i class="bi bi-arrow-right ms-1"></i>
-                        </a>
+                    <div class="col-md-6">
+                        <div class="audience-item h-100">
+                            <div class="audience-icon"><i class="bi bi-check2-circle"></i></div>
+                            <div class="text-dark fw-semibold" style="font-size: 14.5px;">
+                                Learners aspiring to build careers in heritage management, museums, archaeology, and cultural tourism.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="audience-item h-100">
+                            <div class="audience-icon"><i class="bi bi-check2-circle"></i></div>
+                            <div class="text-dark fw-semibold" style="font-size: 14.5px;">
+                                Individuals passionate about Sanskrit, Pali, Prakrit, and classical Indian literature.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="audience-item h-100">
+                            <div class="audience-icon"><i class="bi bi-check2-circle"></i></div>
+                            <div class="text-dark fw-semibold" style="font-size: 14.5px;">
+                                Students seeking to explore Indian Knowledge Systems and traditional wisdom.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -2923,67 +2962,54 @@ img, video, iframe {
     <section class="py-5" id="careers">
         <div class="container py-4">
             <div class="text-center mb-5">
-                <span class="badge px-3 py-2 text-uppercase mb-2" style="background: rgba(32, 38, 87, 0.1); color: var(--primary); font-weight: 700; letter-spacing: 1px;">Career Transition</span>
                 <h2 class="display-6 fw-bold" style="color: var(--primary);">Placement Opportunities &amp; Career Assistance</h2>
                 <div class="mx-auto mt-2" style="width: 70px; height: 3px; background: #F58220; border-radius: 2px;"></div>
-                <p class="text-muted mt-3 mb-0 mx-auto" style="max-width: 860px; font-size: 15.5px; line-height: 1.8;">
-                    Our institution is committed to providing comprehensive career support to Indology graduates. The dedicated Placement Cell actively connects students with leading organizations, research institutions, museums, cultural bodies, and corporate entities. We offer:
+                <p class="text-dark mt-3 mb-0 mx-auto" style="max-width: 900px; font-size: 15.5px; line-height: 1.8;">
+                    The Placement Cell provides comprehensive career guidance, internship support, skill development training, and placement assistance to help students successfully transition into professional careers. The programme equips graduates with interdisciplinary knowledge and practical skills that are highly valued across heritage, culture, education, tourism, research, and public administration sectors.
                 </p>
             </div>
 
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="career-opportunity-card">
-                        <div class="career-icon-box"><i class="bi bi-compass"></i></div>
-                        <h5>Heritage &amp; Tourism Organizations</h5>
-                        <p>Roles in cultural tourism management, heritage walk curation, site interpretation, and tourism consultancy.</p>
+                        <div class="career-icon-box"><i class="bi bi-shield-check"></i></div>
+                        <h5 class="mb-0">Heritage Management and Conservation Organizations</h5>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="career-opportunity-card">
                         <div class="career-icon-box"><i class="bi bi-bank"></i></div>
-                        <h5>Museums, Archives &amp; Cultural Institutions</h5>
-                        <p>Opportunities as assistant curators, archivists, exhibition researchers, and conservators.</p>
+                        <h5 class="mb-0">Museums, Archives, and Cultural Resource Centres</h5>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="career-opportunity-card">
-                        <div class="career-icon-box"><i class="bi bi-journal-richtext"></i></div>
-                        <h5>Publishing, Media &amp; Digital Content</h5>
-                        <p>Content developers, script researchers, cultural journalists, and editors specializing in Indian history, philosophy, and heritage.</p>
+                        <div class="career-icon-box"><i class="bi bi-compass"></i></div>
+                        <h5 class="mb-0">Archaeological Research and Documentation Institutions</h5>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="career-opportunity-card">
-                        <div class="career-icon-box"><i class="bi bi-lightbulb"></i></div>
-                        <h5>Research Institutions &amp; Think Tanks</h5>
-                        <p>Research assistants, project fellows, and policy analysts in organizations focusing on Indian knowledge systems and cultural policy.</p>
+                        <div class="career-icon-box"><i class="bi bi-map"></i></div>
+                        <h5 class="mb-0">Cultural Tourism and Heritage Interpretation Services</h5>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="career-opportunity-card">
                         <div class="career-icon-box"><i class="bi bi-building"></i></div>
-                        <h5>Government &amp; Public Sector</h5>
-                        <p>Eligibility for competitive examinations including civil services, archaeological surveys, state cultural departments, and educational institutions.</p>
+                        <h5 class="mb-0">Government Departments of Culture, Archaeology, and Tourism</h5>
                     </div>
                 </div>
-
                 <div class="col-md-6 col-lg-4">
                     <div class="career-opportunity-card">
                         <div class="career-icon-box"><i class="bi bi-mortarboard"></i></div>
-                        <h5>Education &amp; Higher Studies</h5>
-                        <p>Strong foundation for pursuing M.A., M.Phil., Ph.D. in Indology, History, Archaeology, Sanskrit, and allied disciplines, leading to academic careers.</p>
+                        <h5 class="mb-0">Educational Institutions and Academic Research Centres</h5>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Section 6: Admissions Open CTA Banner -->
     <section class="py-5 bg-light" id="admissions">
         <div class="container py-4">
             <div class="p-5 rounded-4 text-white text-center shadow-lg position-relative overflow-hidden"

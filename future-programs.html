@@ -1665,6 +1665,75 @@ img, video, iframe {
         padding: 18px 14px;
     }
 }
+    
+        /* === UNIFIED HERO & TYPOGRAPHY STANDARD === */
+        :root {
+            --primary: #202657;
+            --secondary: #F58220;
+            --nav-primary: #202657;
+            --nav-secondary: #F58220;
+            --nav-white: #FFFFFF;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            font-size: 15.5px;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+        .future-hero {
+            position: relative;
+            padding: 130px 0 90px !important;
+            min-height: 390px;
+            display: flex;
+            align-items: center;
+            color: #ffffff;
+            overflow: hidden;
+        }
+        .future-hero h1 {
+            color: #ffffff;
+            font-size: clamp(2rem, 3.4vw, 2.85rem) !important;
+            font-weight: 800 !important;
+            line-height: 1.2 !important;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+            margin-bottom: 12px;
+        }
+        .future-hero p {
+            line-height: 1.7;
+        }
+        .contemporary-navbar.scrolled {
+            background: #FFFFFF !important;
+            background: var(--nav-white) !important;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+        }
+        @media (max-width: 991.98px) {
+            .future-hero {
+                padding: 112px 0 72px !important;
+                min-height: 320px;
+                background-attachment: scroll !important;
+            }
+            .future-hero h1 {
+                font-size: 2.1rem !important;
+            }
+        }
+        @media (max-width: 767.98px) {
+            .future-hero {
+                padding: 98px 0 58px !important;
+                min-height: auto;
+            }
+            .future-hero h1 {
+                font-size: 1.72rem !important;
+                line-height: 1.25 !important;
+            }
+        }
+        @media (max-width: 575.98px) {
+            .future-hero {
+                padding: 90px 0 50px !important;
+            }
+            .future-hero h1 {
+                font-size: 1.5rem !important;
+            }
+        }
+        /* === END UNIFIED STANDARD === */
     </style>
 </head>
 
