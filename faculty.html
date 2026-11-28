@@ -3049,11 +3049,6 @@ img, video, iframe {
             box-shadow: 0 6px 20px rgba(32, 38, 87, 0.04);
             transition: all 0.3s ease;
         }
-        .faculty-dir-card:hover {
-            transform: translateY(-5px);
-            border-color: #F58220;
-            box-shadow: 0 14px 30px rgba(32, 38, 87, 0.11);
-        }
         .faculty-school-pill {
             position: absolute;
             bottom: 12px;
@@ -3218,6 +3213,147 @@ img, video, iframe {
         .nav-link.active{
             color: var(--pk-secondary);
         }
+    
+
+        /* === DISTINGUISHED FACULTY CAROUSEL (Reference Design) === */
+        .df-carousel-viewport {
+            overflow: hidden;
+            width: 100%;
+            padding: 8px 2px 16px;
+        }
+        .df-carousel-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+            will-change: transform;
+        }
+        .df-carousel-slide {
+            flex: 0 0 calc((100% - 48px) / 3);
+            min-width: 0;
+        }
+        .df-profile-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            background: transparent;
+            transition: transform 0.3s ease;
+        }
+        .df-profile-card:hover {
+            transform: translateY(-4px);
+        }
+        .df-profile-img-wrap {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 14px;
+            overflow: hidden;
+            background: #eaecef;
+            box-shadow: 0 6px 20px rgba(15, 20, 56, 0.08);
+            margin-bottom: 14px;
+        }
+        .df-profile-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .df-profile-card:hover .df-profile-img-wrap img {
+            transform: scale(1.03);
+        }
+        .df-profile-desig {
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: #64748b;
+            line-height: 1.4;
+            margin-bottom: 3px;
+        }
+        .df-profile-name {
+            font-size: 1.06rem;
+            font-weight: 700;
+            color: var(--primary, #202657);
+            line-height: 1.35;
+            margin: 0;
+            transition: color 0.25s ease;
+        }
+        .df-profile-card:hover .df-profile-name {
+            color: var(--secondary, #F58220);
+        }
+
+        /* Carousel Controls (Dots + Centered Prev/Next Box) */
+        .df-carousel-controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 14px;
+            margin-top: 22px;
+        }
+        .df-carousel-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .df-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: none;
+            padding: 0;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .df-dot.active {
+            width: 24px;
+            border-radius: 50px;
+            background: var(--secondary, #F58220);
+        }
+        .df-nav-box {
+            display: inline-flex;
+            align-items: center;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(15, 20, 56, 0.06);
+            overflow: hidden;
+        }
+        .df-nav-btn {
+            width: 42px;
+            height: 38px;
+            border: none;
+            background: #ffffff;
+            color: #475569;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .df-nav-btn:first-child {
+            border-right: 1px solid #e2e8f0;
+        }
+        .df-nav-btn:hover {
+            background: var(--primary, #202657);
+            color: #ffffff;
+        }
+
+        @media (max-width: 991.98px) {
+            .df-carousel-slide {
+                flex: 0 0 calc((100% - 24px) / 2);
+            }
+        }
+        @media (max-width: 575.98px) {
+            .df-carousel-track {
+                gap: 16px;
+            }
+            .df-carousel-slide {
+                flex: 0 0 100%;
+            }
+        }
+        /* === END DISTINGUISHED FACULTY CAROUSEL === */
+
     </style>
 </head>
 
@@ -3442,7 +3578,7 @@ img, video, iframe {
         </div>
     </header>
 
-    <section class="distinguished-section" id="distinguished-faculty">
+ <section class="distinguished-section" id="distinguished-faculty">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="section-kicker">Academic Leadership</span>
@@ -3452,137 +3588,183 @@ img, video, iframe {
                 </p>
             </div>
 
-            <div class="row g-4">
-                
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="distinguished-card">
-                        <div class="distinguished-photo">
-                            <img src="Assets/Faculty/DR-N-Aparna.jpg" alt="Dr. N. Aparna" loading="lazy">
-                            <span class="distinguished-ribbon">Distinguished Head & Innovation Ambassador</span>
-                        </div>
-                        <div class="distinguished-body">
-                            <div class="distinguished-school">School of Engineering & Technology</div>
-                            <h3 class="distinguished-name">Dr. N. Aparna</h3>
-                            <div class="distinguished-role">Associate Professor & Head</div>
-                            <p class="distinguished-meta">Ph.D. in Biomedical Image Processing (Anna University). AI, Medical Image Processing, 2 SCI, 2 Scopus, 5 Patents, 11 IEEE Conferences.</p>
-                            <a href="Faculty/dr-n-aparna.html" class="btn-view-faculty">
-                                View Full Profile <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <div class="df-carousel-viewport" id="dfCarouselViewport">
+                <div class="df-carousel-track" id="dfCarouselTrack">
 
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="distinguished-card">
-                        <div class="distinguished-photo">
-                            <img src="Assets/Faculty/dr-k-saravanan.jpg" alt="Dr. K. Saravanan" loading="lazy">
-                            <span class="distinguished-ribbon">Professor & DST Project Investigator</span>
-                        </div>
-                        <div class="distinguished-body">
-                            <div class="distinguished-school">School of Engineering & Technology</div>
-                            <h3 class="distinguished-name">Dr. K. Saravanan</h3>
-                            <div class="distinguished-role">Professor - Avionics & Drone Engineering</div>
-                            <p class="distinguished-meta">20 Yrs Exp., DST SEED STI HUB Project (Rs. 29.3 Lakhs), 25+ SCI/SCOPUS publications, 3 Patents, 1 Book & 4 Book Chapters.</p>
-                            <a href="Faculty/dr-k-saravanan.html" class="btn-view-faculty">
-                                View Full Profile <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
+                    <div class="df-carousel-slide">
+                        <a href="https://pkdasuniversity.ac.in/about/founder-chairman" class="df-profile-card">
+                            <div class="df-profile-img-wrap">
+                                <img src="img/pK das.jpg" alt="Dr. N. Aparna" loading="lazy">
+                            </div>
+                            <div class="df-profile-desig">Founder Chairman</div>
+                            <h3 class="df-profile-name">Late Shri.P.K.Das</h3>
+                        </a>
                     </div>
-                </div>
 
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="distinguished-card">
-                        <div class="distinguished-photo">
-                            <img src="Assets/Faculty/Dr-V-dooslin.jpg" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
-                            <span class="distinguished-ribbon">Coordinator & Best Scientist Awardee</span>
-                        </div>
-                        <div class="distinguished-body">
-                            <div class="distinguished-school">School of Health & Medical Sciences</div>
-                            <h3 class="distinguished-name">Dr. V. Dooslin Mercy Bai</h3>
-                            <div class="distinguished-role">Coordinator, School of Health Sciences</div>
-                            <p class="distinguished-meta">24+ Yrs Exp., Medical Microbiology, Drug Discovery, Nano Medicine. 36 Research Papers, 20 Conference Papers & 25 Patents Published.</p>
-                            <a href="Faculty/dr-v-dooslin-mercy-bai.html" class="btn-view-faculty">
-                                View Full Profile <i class="bi bi-arrow-right"></i>
-                            </a>
-                        </div>
+                    <div class="df-carousel-slide">
+                        <a href="https://pkdasuniversity.ac.in/about/chancellor" class="df-profile-card">
+                            <div class="df-profile-img-wrap">
+                                <img src="img/krishna das.jpeg" alt="Dr. K. Saravanan" loading="lazy">
+                            </div>
+                            <div class="df-profile-desig">Chancellor</div>
+                            <h3 class="df-profile-name">Adv. Dr. P. Krishnadas</h3>
+                        </a>
                     </div>
-                </div>
 
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="distinguished-card">
-                        <div class="distinguished-photo">
-                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. R. Sundararajan" loading="lazy">
-                            <span class="distinguished-ribbon">Dean & Academic Leader</span>
-                        </div>
-                        <div class="distinguished-body">
-                            <div class="distinguished-school">School of Engineering & Technology</div>
-                            <h3 class="distinguished-name">Dr. R. Sundararajan</h3>
-                            <div class="distinguished-role">Professor & Dean</div>
-                            <p class="distinguished-meta">Leading academic strategy, research excellence, and outcome-based engineering education across the School of Engineering.</p>
-                            <button type="button" class="btn-view-faculty js-faculty-modal-btn"
-                                data-name="Dr. R. Sundararajan"
-                                data-desig="Professor & Dean"
-                                data-school="School of Engineering & Technology"
-                                data-qual="Dean, School of Engineering"
-                                data-bio="Leading academic strategy, research excellence, and outcome-based engineering education across the School of Engineering."
-                                data-img="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg">
-                                View Full Profile <i class="bi bi-eye"></i>
-                            </button>
-                        </div>
+                    <div class="df-carousel-slide">
+                        <a href="https://pkdasuniversity.ac.in/about/pro-chancellor" class="df-profile-card">
+                            <div class="df-profile-img-wrap">
+                                <img src="img/krishnakumar.jpeg" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
+                            </div>
+                            <div class="df-profile-desig">Pro Chancellor</div>
+                            <h3 class="df-profile-name">Dr. P. Krishnakumar</h3>
+                        </a>
                     </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="distinguished-card">
-                        <div class="distinguished-photo">
-                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. K. Meenakshi" loading="lazy">
-                            <span class="distinguished-ribbon">Distinguished Professor</span>
-                        </div>
-                        <div class="distinguished-body">
-                            <div class="distinguished-school">School of Health & Medical Sciences</div>
-                            <h3 class="distinguished-name">Dr. K. Meenakshi</h3>
-                            <div class="distinguished-role">Professor & Head</div>
-                            <p class="distinguished-meta">Mentoring clinical diagnostics, allied health sciences, and interdisciplinary medical research initiatives.</p>
-                            <button type="button" class="btn-view-faculty js-faculty-modal-btn"
-                                data-name="Dr. K. Meenakshi"
-                                data-desig="Professor & Head"
-                                data-school="School of Health & Medical Sciences"
-                                data-qual="Head of Department"
-                                data-bio="Mentoring clinical diagnostics, allied health sciences, and interdisciplinary medical research initiatives."
-                                data-img="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg">
-                                View Full Profile <i class="bi bi-eye"></i>
-                            </button>
-                        </div>
+                    <div class="df-carousel-slide">
+                        <a href="https://pkdasuniversity.ac.in/about/vice-chancellor" class="df-profile-card">
+                            <div class="df-profile-img-wrap">
+                                <img src="https://pkdasuniversity.ac.in/uploads/2026/07/dr-h-n-nagarajaj-executive-director.JPG" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
+                            </div>
+                            <div class="df-profile-desig">Vice Chancellor</div>
+                            <h3 class="df-profile-name">Prof. Dr. H. N. Nagaraja</h3>
+                        </a>
                     </div>
-                </div>
 
-                <div class="col-12 col-sm-6 col-lg-3">
-                    <div class="distinguished-card">
-                        <div class="distinguished-photo">
-                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. S. Arun Kumar" loading="lazy">
-                            <span class="distinguished-ribbon">Research Lead</span>
-                        </div>
-                        <div class="distinguished-body">
-                            <div class="distinguished-school">School of Health & Medical Sciences</div>
-                            <h3 class="distinguished-name">Dr. S. Arun Kumar</h3>
-                            <div class="distinguished-role">Lead, AI & Imaging</div>
-                            <p class="distinguished-meta">Specializing in artificial intelligence applications in medical imaging, healthcare informatics, and clinical decision systems.</p>
-                            <button type="button" class="btn-view-faculty js-faculty-modal-btn"
-                                data-name="Dr. S. Arun Kumar"
-                                data-desig="Lead, AI & Imaging"
-                                data-school="School of Health & Medical Sciences"
-                                data-qual="Ph.D. &bull; AI & Medical Imaging"
-                                data-bio="Specializing in artificial intelligence applications in medical imaging, healthcare informatics, and clinical decision systems."
-                                data-img="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg">
-                                View Full Profile <i class="bi bi-eye"></i>
-                            </button>
-                        </div>
-                    </div>
                 </div>
+            </div>
 
+            <div class="df-carousel-controls">
+                <div class="df-carousel-dots" id="dfCarouselDots" aria-label="Carousel pagination"></div>
+                <div class="df-nav-box">
+                    <button type="button" class="df-nav-btn" id="dfPrevBtn" aria-label="Previous faculty">
+                        <i class="bi bi-chevron-left"></i>
+                    </button>
+                    <button type="button" class="df-nav-btn" id="dfNextBtn" aria-label="Next faculty">
+                        <i class="bi bi-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        (function () {
+            function initDistinguishedCarousel() {
+                const track = document.getElementById('dfCarouselTrack');
+                const viewport = document.getElementById('dfCarouselViewport');
+                const prevBtn = document.getElementById('dfPrevBtn');
+                const nextBtn = document.getElementById('dfNextBtn');
+                const dotsWrap = document.getElementById('dfCarouselDots');
+                if (!track || !viewport || !prevBtn || !nextBtn || !dotsWrap) return;
+
+                let currentIndex = 0;
+
+                function getVisibleCount() {
+                    if (window.innerWidth < 576) return 1;
+                    if (window.innerWidth < 992) return 2;
+                    return 3;
+                }
+
+                function getTotalSlides() {
+                    return track.querySelectorAll('.df-carousel-slide').length;
+                }
+
+                function getMaxIndex() {
+                    return Math.max(0, getTotalSlides() - getVisibleCount());
+                }
+
+                function renderDots() {
+                    const maxIdx = getMaxIndex();
+                    const dotCount = maxIdx + 1;
+                    dotsWrap.innerHTML = '';
+                    for (let i = 0; i < dotCount; i++) {
+                        const dot = document.createElement('button');
+                        dot.type = 'button';
+                        dot.className = 'df-dot' + (i === currentIndex ? ' active' : '');
+                        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+                        dot.addEventListener('click', function () {
+                            goTo(i);
+                        });
+                        dotsWrap.appendChild(dot);
+                    }
+                }
+
+                function updatePosition() {
+                    const slides = track.querySelectorAll('.df-carousel-slide');
+                    if (!slides.length) return;
+                    const maxIdx = getMaxIndex();
+                    if (currentIndex > maxIdx) currentIndex = maxIdx;
+                    if (currentIndex < 0) currentIndex = 0;
+
+                    const style = window.getComputedStyle(track);
+                    const gap = parseFloat(style.gap || style.columnGap || 24) || 24;
+                    const slideWidth = slides[0].getBoundingClientRect().width;
+                    const offset = currentIndex * (slideWidth + gap);
+                    track.style.transform = 'translateX(-' + offset + 'px)';
+
+                    const dots = dotsWrap.querySelectorAll('.df-dot');
+                    dots.forEach(function (d, idx) {
+                        d.classList.toggle('active', idx === currentIndex);
+                    });
+                }
+
+                function goTo(index) {
+                    const maxIdx = getMaxIndex();
+                    if (maxIdx === 0) {
+                        const slides = track.querySelectorAll('.df-carousel-slide');
+                        if (slides.length > 1) {
+                            if (index > currentIndex) {
+                                track.appendChild(slides[0]);
+                            } else if (index < currentIndex) {
+                                track.insertBefore(slides[slides.length - 1], slides[0]);
+                            }
+                        }
+                        currentIndex = 0;
+                    } else {
+                        if (index > maxIdx) currentIndex = 0;
+                        else if (index < 0) currentIndex = maxIdx;
+                        else currentIndex = index;
+                    }
+                    updatePosition();
+                }
+
+                prevBtn.addEventListener('click', function () {
+                    goTo(currentIndex - 1);
+                });
+
+                nextBtn.addEventListener('click', function () {
+                    goTo(currentIndex + 1);
+                });
+
+                let touchStartX = 0;
+                viewport.addEventListener('touchstart', function (e) {
+                    touchStartX = e.changedTouches[0].screenX;
+                }, { passive: true });
+                viewport.addEventListener('touchend', function (e) {
+                    const diff = touchStartX - e.changedTouches[0].screenX;
+                    if (Math.abs(diff) > 40) {
+                        if (diff > 0) goTo(currentIndex + 1);
+                        else goTo(currentIndex - 1);
+                    }
+                }, { passive: true });
+
+                window.addEventListener('resize', function () {
+                    renderDots();
+                    updatePosition();
+                });
+
+                renderDots();
+                updatePosition();
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initDistinguishedCarousel);
+            } else {
+                initDistinguishedCarousel();
+            }
+        })();
+    </script>
+
     <section class="all-faculty-section" id="all-schools-faculty">
         <div class="container">
             <div class="text-center mb-4">
@@ -3597,8 +3779,8 @@ img, video, iframe {
                 <div class="school-filter-tabs" role="tablist" aria-label="Filter faculty by school">
                     <button type="button" class="school-tab-btn active" data-filter="all">All Schools</button>
                     <button type="button" class="school-tab-btn" data-filter="engineering">School of Engineering &amp; Technology</button>
-                    <button type="button" class="school-tab-btn" data-filter="medical">School of Health &amp; Medical Sciences</button>
-                    <button type="button" class="school-tab-btn" data-filter="arts">School of Arts &amp; Social Sciences</button>
+                    <button type="button" class="school-tab-btn" data-filter="medical">School of Health Sciences</button>
+                    <button type="button" class="school-tab-btn" data-filter="arts">School of Social Sciences</button>
                 </div>
 
                 <div class="faculty-search-box">
@@ -3609,17 +3791,17 @@ img, video, iframe {
 
             <div class="row g-4" id="allFacultyGrid">
                 
-                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="engineering" data-search="dr. n. aparna associate professor & head m.e., ph.d. &bull; 16 years 6 months exp. school of engineering & technology ph.d. in biomedical image processing (anna university). ai, medical image processing, 2 sci, 2 scopus, 5 patents, 11 ieee conferences.">
+
+                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="medical" data-search="dr. v. dooslin mercy bai coordinator, school of health sciences m.sc., ph.d.- microbiology &bull; 24 years 3 months exp. school of health & medical sciences 24+ yrs exp., medical microbiology, drug discovery, nano medicine. 36 research papers, 20 conference papers & 25 patents published.">
                     <div class="faculty-dir-card">
                         <div class="faculty-dir-photo">
-                            <img src="Assets/Faculty/DR-N-Aparna.jpg" alt="Dr. N. Aparna" loading="lazy">
-                            <span class="faculty-school-pill">School of Engineering & Technology</span>
+                            <img src="Assets/Faculty/Dr-V-dooslin.jpg" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
+                            <span class="faculty-school-pill">School of Health Sciences</span>
                         </div>
                         <div class="faculty-dir-body">
-                            <h4 class="faculty-dir-name">Dr. N. Aparna</h4>
-                            <div class="faculty-dir-desig">Associate Professor & Head</div>
-                            <div class="faculty-dir-qual">M.E., Ph.D. &bull; 16 years 6 months Exp.</div>
-                            <a href="Faculty/dr-n-aparna.html" class="btn-view-faculty">
+                            <h4 class="faculty-dir-name">Dr. V. Dooslin Mercy Bai</h4>
+                            <div class="faculty-dir-desig">Coordinator, School of Health Sciences</div>
+                            <a href="Faculty/dr-v-dooslin-mercy-bai.html" class="btn-view-faculty">
                                 View Profile <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -3635,7 +3817,6 @@ img, video, iframe {
                         <div class="faculty-dir-body">
                             <h4 class="faculty-dir-name">Dr. K. Saravanan</h4>
                             <div class="faculty-dir-desig">Professor - Avionics & Drone Engineering</div>
-                            <div class="faculty-dir-qual">B.E (Distinction) M.E., PhD., Post Doc* &bull; 20 Yrs Exp.</div>
                             <a href="Faculty/dr-k-saravanan.html" class="btn-view-faculty">
                                 View Profile <i class="bi bi-arrow-right"></i>
                             </a>
@@ -3643,126 +3824,67 @@ img, video, iframe {
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="medical" data-search="dr. v. dooslin mercy bai coordinator, school of health sciences m.sc., ph.d.- microbiology &bull; 24 years 3 months exp. school of health & medical sciences 24+ yrs exp., medical microbiology, drug discovery, nano medicine. 36 research papers, 20 conference papers & 25 patents published.">
+                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="engineering" data-search="dr. n. aparna associate professor & head m.e., ph.d. &bull; 16 years 6 months exp. school of engineering & technology ph.d. in biomedical image processing (anna university). ai, medical image processing, 2 sci, 2 scopus, 5 patents, 11 ieee conferences.">
                     <div class="faculty-dir-card">
                         <div class="faculty-dir-photo">
-                            <img src="Assets/Faculty/Dr-V-dooslin.jpg" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
-                            <span class="faculty-school-pill">School of Health & Medical Sciences</span>
+                            <img src="Assets/Faculty/DR-N-Aparna.jpg" alt="Dr. N. Aparna" loading="lazy">
+                            <span class="faculty-school-pill">School of Engineering & Technology</span>
                         </div>
                         <div class="faculty-dir-body">
-                            <h4 class="faculty-dir-name">Dr. V. Dooslin Mercy Bai</h4>
-                            <div class="faculty-dir-desig">Coordinator, School of Health Sciences</div>
-                            <div class="faculty-dir-qual">M.Sc., Ph.D.- Microbiology &bull; 24 Years 3 Months Exp.</div>
-                            <a href="Faculty/dr-v-dooslin-mercy-bai.html" class="btn-view-faculty">
+                            <h4 class="faculty-dir-name">Dr. N. Aparna</h4>
+                            <div class="faculty-dir-desig">Associate Professor & Head</div>
+                            <a href="Faculty/dr-n-aparna.html" class="btn-view-faculty">
                                 View Profile <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="engineering" data-search="dr. r. sundararajan professor & dean dean, school of engineering school of engineering & technology leading academic strategy, research excellence, and outcome-based engineering education across the school of engineering.">
-                    <div class="faculty-dir-card">
-                        <div class="faculty-dir-photo">
-                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. R. Sundararajan" loading="lazy">
-                            <span class="faculty-school-pill">School of Engineering & Technology</span>
-                        </div>
-                        <div class="faculty-dir-body">
-                            <h4 class="faculty-dir-name">Dr. R. Sundararajan</h4>
-                            <div class="faculty-dir-desig">Professor & Dean</div>
-                            <div class="faculty-dir-qual">Dean, School of Engineering</div>
-                            <button type="button" class="btn-view-faculty js-faculty-modal-btn"
-                                data-name="Dr. R. Sundararajan"
-                                data-desig="Professor & Dean"
-                                data-school="School of Engineering & Technology"
-                                data-qual="Dean, School of Engineering"
-                                data-bio="Leading academic strategy, research excellence, and outcome-based engineering education across the School of Engineering."
-                                data-img="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg">
-                                View Profile <i class="bi bi-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="medical" data-search="dr. k. meenakshi professor & head head of department school of health & medical sciences mentoring clinical diagnostics, allied health sciences, and interdisciplinary medical research initiatives.">
-                    <div class="faculty-dir-card">
-                        <div class="faculty-dir-photo">
-                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. K. Meenakshi" loading="lazy">
-                            <span class="faculty-school-pill">School of Health & Medical Sciences</span>
-                        </div>
-                        <div class="faculty-dir-body">
-                            <h4 class="faculty-dir-name">Dr. K. Meenakshi</h4>
-                            <div class="faculty-dir-desig">Professor & Head</div>
-                            <div class="faculty-dir-qual">Head of Department</div>
-                            <button type="button" class="btn-view-faculty js-faculty-modal-btn"
-                                data-name="Dr. K. Meenakshi"
-                                data-desig="Professor & Head"
-                                data-school="School of Health & Medical Sciences"
-                                data-qual="Head of Department"
-                                data-bio="Mentoring clinical diagnostics, allied health sciences, and interdisciplinary medical research initiatives."
-                                data-img="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg">
-                                View Profile <i class="bi bi-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="medical" data-search="dr. s. arun kumar lead, ai & imaging ph.d. &bull; ai & medical imaging school of health & medical sciences specializing in artificial intelligence applications in medical imaging, healthcare informatics, and clinical decision systems.">
-                    <div class="faculty-dir-card">
-                        <div class="faculty-dir-photo">
-                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. S. Arun Kumar" loading="lazy">
-                            <span class="faculty-school-pill">School of Health & Medical Sciences</span>
-                        </div>
-                        <div class="faculty-dir-body">
-                            <h4 class="faculty-dir-name">Dr. S. Arun Kumar</h4>
-                            <div class="faculty-dir-desig">Lead, AI & Imaging</div>
-                            <div class="faculty-dir-qual">Ph.D. &bull; AI & Medical Imaging</div>
-                            <button type="button" class="btn-view-faculty js-faculty-modal-btn"
-                                data-name="Dr. S. Arun Kumar"
-                                data-desig="Lead, AI & Imaging"
-                                data-school="School of Health & Medical Sciences"
-                                data-qual="Ph.D. &bull; AI & Medical Imaging"
-                                data-bio="Specializing in artificial intelligence applications in medical imaging, healthcare informatics, and clinical decision systems."
-                                data-img="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg">
-                                View Profile <i class="bi bi-eye"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="engineering" data-search="dr. priya lead, aerodynamics ph.d. &bull; aerospace & drone systems school of engineering & technology research focus on aerodynamics, uav flight dynamics, and avionics integration.">
+                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="medical" data-search="dr. priya lead, aerodynamics ph.d. &bull; aerospace & drone systems school of engineering & technology research focus on aerodynamics, uav flight dynamics, and avionics integration.">
                     <div class="faculty-dir-card">
                         <div class="faculty-dir-photo">
                             <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. Priya" loading="lazy">
-                            <span class="faculty-school-pill">School of Engineering & Technology</span>
+                            <span class="faculty-school-pill">School of Health Science</span>
                         </div>
                         <div class="faculty-dir-body">
-                            <h4 class="faculty-dir-name">Dr. Priya</h4>
-                            <div class="faculty-dir-desig">Lead, Aerodynamics</div>
-                            <div class="faculty-dir-qual">Ph.D. &bull; Aerospace & Drone Systems</div>
-                            <button type="button" class="btn-view-faculty js-faculty-modal-btn"
-                                data-name="Dr. Priya"
-                                data-desig="Lead, Aerodynamics"
-                                data-school="School of Engineering & Technology"
-                                data-qual="Ph.D. &bull; Aerospace & Drone Systems"
-                                data-bio="Research focus on aerodynamics, UAV flight dynamics, and avionics integration."
-                                data-img="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg">
-                                View Profile <i class="bi bi-eye"></i>
-                            </button>
+                            <h4 class="faculty-dir-name">Mr. Shibin Mathew</h4>
+                            <div class="faculty-dir-desig">Assistant Professor - MRIT</div>
+                            <div class="faculty-dir-qual"></div>
+                            <a href="#" class="btn-view-faculty">
+                                View Profile <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="arts" data-search="school of arts & social sciences faculty department of performing arts & indology performing arts, indology & cultural studies school of arts & social sciences dedicated educators and practitioners guiding b.a. performing arts (honours) and b.sc. indology.">
+                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="medical" data-search="dr. priya lead, aerodynamics ph.d. &bull; aerospace & drone systems school of engineering & technology research focus on aerodynamics, uav flight dynamics, and avionics integration.">
                     <div class="faculty-dir-card">
                         <div class="faculty-dir-photo">
-                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="School of Arts & Social Sciences Faculty" loading="lazy">
-                            <span class="faculty-school-pill">School of Arts & Social Sciences</span>
+                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. Priya" loading="lazy">
+                            <span class="faculty-school-pill">School of Health Science</span>
                         </div>
                         <div class="faculty-dir-body">
-                            <h4 class="faculty-dir-name">School of Arts & Social Sciences Faculty</h4>
-                            <div class="faculty-dir-desig">Department of Performing Arts & Indology</div>
-                            <div class="faculty-dir-qual">Performing Arts, Indology & Cultural Studies</div>
-                            <a href="School-of-arts.html#faculty" class="btn-view-faculty">
+                            <h4 class="faculty-dir-name">Ms.Sowndharya S P</h4>
+                            <div class="faculty-dir-desig">Assistant Professor - AOTT</div>
+                            <div class="faculty-dir-qual"></div>
+                            <a href="#" class="btn-view-faculty">
+                                View Profile <i class="bi bi-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="all" data-search="dr. priya lead, aerodynamics ph.d. &bull; aerospace & drone systems school of engineering & technology research focus on aerodynamics, uav flight dynamics, and avionics integration.">
+                    <div class="faculty-dir-card">
+                        <div class="faculty-dir-photo">
+                            <img src="https://i.pinimg.com/736x/32/9b/54/329b54d07444f009b0634f438db9a449.jpg" alt="Dr. Priya" loading="lazy">
+                            
+                        </div>
+                        <div class="faculty-dir-body">
+                            <h4 class="faculty-dir-name">Dr. A K Pratheepa</h4>
+                            <div class="faculty-dir-desig">Librarian</div>
+                            <div class="faculty-dir-qual"></div>
+                            <a href="#" class="btn-view-faculty">
                                 View Profile <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
