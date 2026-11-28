@@ -2873,12 +2873,11 @@ img, video, iframe {
             line-height: 1.7;
         }
 
-        /* Responsive, Uniformly Fitted Faculty Images (All Screen Sizes & Aspect Ratios) */
         .distinguished-photo,
         .faculty-dir-photo {
             position: relative;
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 3 / 3;
             background: linear-gradient(145deg, #1b2254 0%, #202657 60%, #0c4a6e 100%);
             overflow: hidden;
             flex-shrink: 0;
@@ -3118,7 +3117,6 @@ img, video, iframe {
             color: #ffffff;
         }
 
-        /* Modal Portrait Responsive Fit */
         .modal-faculty-photo {
             width: 100%;
             aspect-ratio: 4 / 3;
@@ -3151,7 +3149,6 @@ img, video, iframe {
             }
         }
     
-        /* === UNIFIED HERO & TYPOGRAPHY STANDARD === */
         :root {
             --primary: #202657;
             --secondary: #F58220;
@@ -3218,7 +3215,9 @@ img, video, iframe {
                 font-size: 1.5rem !important;
             }
         }
-        /* === END UNIFIED STANDARD === */
+        .nav-link.active{
+            color: var(--pk-secondary);
+        }
     </style>
 </head>
 
@@ -3241,6 +3240,9 @@ img, video, iframe {
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index.html#school_categories">Schools</a>
+                </li>
+                <li class="nav-item active" >
+                    <a class="nav-link active" href="faculty.html">Faculty</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="https://pkdasuniversity.ac.in/campus">Campus</a>
@@ -3419,7 +3421,6 @@ img, video, iframe {
         </div>
     </div>
 
-    <!-- Hero Section -->
     <header class="faculty-hero" id="hero">
         <div class="container position-relative" style="z-index: 5;">
             <div class="hero-crumb">
@@ -3441,7 +3442,6 @@ img, video, iframe {
         </div>
     </header>
 
-    <!-- Section 1 (Comes First): Our Distinguished Faculty -->
     <section class="distinguished-section" id="distinguished-faculty">
         <div class="container">
             <div class="text-center mb-5">
@@ -3457,7 +3457,7 @@ img, video, iframe {
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="distinguished-card">
                         <div class="distinguished-photo">
-                            <img src="Images/dr-n-aparna.jpg" alt="Dr. N. Aparna" loading="lazy">
+                            <img src="Assets/Faculty/DR-N-Aparna.jpg" alt="Dr. N. Aparna" loading="lazy">
                             <span class="distinguished-ribbon">Distinguished Head & Innovation Ambassador</span>
                         </div>
                         <div class="distinguished-body">
@@ -3475,7 +3475,7 @@ img, video, iframe {
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="distinguished-card">
                         <div class="distinguished-photo">
-                            <img src="Images/dr-k-saravanan.jpg" alt="Dr. K. Saravanan" loading="lazy">
+                            <img src="Assets/Faculty/dr-k-saravanan.jpg" alt="Dr. K. Saravanan" loading="lazy">
                             <span class="distinguished-ribbon">Professor & DST Project Investigator</span>
                         </div>
                         <div class="distinguished-body">
@@ -3493,7 +3493,7 @@ img, video, iframe {
                 <div class="col-12 col-sm-6 col-lg-3">
                     <div class="distinguished-card">
                         <div class="distinguished-photo">
-                            <img src="Images/dr-v-dooslin-mercy-bai.jpg" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
+                            <img src="Assets/Faculty/Dr-V-dooslin.jpg" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
                             <span class="distinguished-ribbon">Coordinator & Best Scientist Awardee</span>
                         </div>
                         <div class="distinguished-body">
@@ -3593,7 +3593,6 @@ img, video, iframe {
                 </p>
             </div>
 
-            <!-- Interactive Filter & Search Toolbar -->
             <div class="filter-toolbar">
                 <div class="school-filter-tabs" role="tablist" aria-label="Filter faculty by school">
                     <button type="button" class="school-tab-btn active" data-filter="all">All Schools</button>
@@ -3608,13 +3607,12 @@ img, video, iframe {
                 </div>
             </div>
 
-            <!-- Unified All-Schools Grid -->
             <div class="row g-4" id="allFacultyGrid">
                 
                 <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="engineering" data-search="dr. n. aparna associate professor & head m.e., ph.d. &bull; 16 years 6 months exp. school of engineering & technology ph.d. in biomedical image processing (anna university). ai, medical image processing, 2 sci, 2 scopus, 5 patents, 11 ieee conferences.">
                     <div class="faculty-dir-card">
                         <div class="faculty-dir-photo">
-                            <img src="Images/dr-n-aparna.jpg" alt="Dr. N. Aparna" loading="lazy">
+                            <img src="Assets/Faculty/DR-N-Aparna.jpg" alt="Dr. N. Aparna" loading="lazy">
                             <span class="faculty-school-pill">School of Engineering & Technology</span>
                         </div>
                         <div class="faculty-dir-body">
@@ -3631,7 +3629,7 @@ img, video, iframe {
                 <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="engineering" data-search="dr. k. saravanan professor - avionics & drone engineering b.e (distinction) m.e., phd., post doc* &bull; 20 yrs exp. school of engineering & technology 20 yrs exp., dst seed sti hub project (rs. 29.3 lakhs), 25+ sci/scopus publications, 3 patents, 1 book & 4 book chapters.">
                     <div class="faculty-dir-card">
                         <div class="faculty-dir-photo">
-                            <img src="Images/dr-k-saravanan.jpg" alt="Dr. K. Saravanan" loading="lazy">
+                            <img src="Assets/Faculty/dr-k-saravanan.jpg" alt="Dr. K. Saravanan" loading="lazy">
                             <span class="faculty-school-pill">School of Engineering & Technology</span>
                         </div>
                         <div class="faculty-dir-body">
@@ -3648,7 +3646,7 @@ img, video, iframe {
                 <div class="col-12 col-sm-6 col-lg-4 faculty-filter-item" data-school="medical" data-search="dr. v. dooslin mercy bai coordinator, school of health sciences m.sc., ph.d.- microbiology &bull; 24 years 3 months exp. school of health & medical sciences 24+ yrs exp., medical microbiology, drug discovery, nano medicine. 36 research papers, 20 conference papers & 25 patents published.">
                     <div class="faculty-dir-card">
                         <div class="faculty-dir-photo">
-                            <img src="Images/dr-v-dooslin-mercy-bai.jpg" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
+                            <img src="Assets/Faculty/Dr-V-dooslin.jpg" alt="Dr. V. Dooslin Mercy Bai" loading="lazy">
                             <span class="faculty-school-pill">School of Health & Medical Sciences</span>
                         </div>
                         <div class="faculty-dir-body">
@@ -3781,7 +3779,6 @@ img, video, iframe {
         </div>
     </section>
 
-    <!-- Faculty Quick-Profile Modal -->
     <div class="modal fade" id="facultyProfileModal" tabindex="-1" aria-labelledby="facultyModalTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content border-0 rounded-4 overflow-hidden shadow-lg">
@@ -3853,7 +3850,6 @@ img, video, iframe {
                 searchInput.addEventListener('input', applyFilters);
             }
 
-            // Quick-View Modal Handler
             const modalEl = document.getElementById('facultyProfileModal');
             document.querySelectorAll('.js-faculty-modal-btn').forEach(function(btn) {
                 btn.addEventListener('click', function() {
